@@ -25,8 +25,8 @@
 - `영어 고급 수업` (레벨을 말로 지정)
 
 ## 설치
-- **claude.ai**: 이 폴더를 zip으로 묶어 설정의 스킬(Skills) 메뉴에서 업로드합니다.
-- **Claude Code**: 폴더를 `~/.claude/skills/language-lesson-builder/`에 복사합니다. 수업 기록은 작업 폴더의 `lesson-log.md`에 남습니다.
+- **claude.ai**: GitHub에서 **Code → Download ZIP** → 압축을 풀고 폴더 이름을 `language-lesson-builder-main`에서 **`language-lesson-builder`**로 바꾼 뒤 그 폴더를 다시 zip으로 묶어, 설정 → 스킬(Skills)에서 업로드합니다 (claude.ai는 zip 안의 폴더 이름이 스킬 이름과 같아야 합니다). Releases에 `language-lesson-builder.zip`이 있으면 그 파일을 바로 업로드하면 됩니다.
+- **Claude Code**: `git clone https://github.com/guilloufre/language-lesson-builder ~/.claude/skills/language-lesson-builder` 수업 기록은 작업 폴더의 `lesson-log.md`에 남습니다.
 - 필요 환경: Python 3, ffmpeg(음성 파일을 만들 때만). 선택: `pip install edge-tts`(무료 신경망 음성), ElevenLabs 커넥터.
 
 ## 구조

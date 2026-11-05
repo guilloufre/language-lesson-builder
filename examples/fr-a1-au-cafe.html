@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Au café — les articles</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1c1f24;--mute:#6b727c;--line:#e7e4de;--acc:#2f5bd3;--acc2:#edf1fc;--ok:#1a7f43;--okbg:#e8f5ec;--no:#b42318;--nobg:#fcecea;--mark:#ffe98a}
+@media (prefers-color-scheme:dark){:root{--bg:#141619;--card:#1d2025;--ink:#e9eaec;--mute:#9aa1ab;--line:#30343b;--acc:#8eaaff;--acc2:#222c44;--ok:#62d18e;--okbg:#17301f;--no:#ff8b80;--nobg:#3a1e1b;--mark:#5c4c00}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+a{color:var(--acc)}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px)}
+.bar1{display:flex;align-items:center;gap:12px;padding:12px 0 8px}
+.bar1 .t{font-weight:650;font-size:.92rem;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.switch{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--mute);cursor:pointer;white-space:nowrap}
+.segs{display:flex;gap:3px;padding-bottom:10px}
+.seg{flex:1;height:4px;border-radius:2px;background:var(--line);border:0;padding:0}
+.seg.done{background:var(--acc)}.seg.cur{background:color-mix(in srgb,var(--acc) 40%,var(--line))}.seg.nav{cursor:pointer}
+.hero{padding:22px 0 0}
+h1{font-size:1.6rem;line-height:1.25;margin:0 0 8px}
+.pill{display:inline-block;padding:1px 9px;border-radius:999px;background:var(--acc2);color:var(--acc);font-weight:600;font-size:.76rem;margin:0 6px 6px 0}
+.goals{margin:8px 0 0;padding-left:20px;color:var(--mute);font-size:.95rem}
+section.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+body.paged section.step:not(.active){display:none}
+.kicker{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
+h2{font-size:1.25rem;margin:2px 0 2px}
+.hint{color:var(--mute);font-size:.9rem;margin:0}
+.block{margin-top:20px}
+.bhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
+.label{font-size:.72rem;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+h3{font-size:1rem;margin:0 0 4px}
+button,select{font:inherit;font-size:.88rem;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+button.primary{background:var(--acc);border-color:var(--acc);color:#fff}
+button.icon{width:34px;height:34px;padding:0;display:inline-grid;place-items:center;color:var(--mute)}
+button.icon:hover,button.icon.on{color:var(--acc);border-color:var(--acc2);background:var(--acc2)}
+button.icon.big{width:42px;height:42px;background:var(--acc);border-color:var(--acc);color:#fff}
+button.say{border:0;background:none;padding:0 4px 0 0;color:var(--mute);vertical-align:-3px;border-radius:4px}button.say:hover{color:var(--acc)}
+select{padding:5px 10px;color:var(--mute)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.player{display:flex;gap:8px;align-items:center;margin-top:16px}
+.player audio{flex:1;min-width:0;height:40px}
+ol.q{margin:0;padding-left:22px}ol.q li{margin:6px 0}
+.ans{display:none;color:var(--ok);font-size:.93rem}
+.show-ans .ans{display:block}
+.text{margin-top:12px;padding:4px 0 4px 16px;border-left:3px solid var(--line)}
+.text.hidden{display:none}
+.text p{margin:4px -8px;padding:3px 8px;border-radius:8px;transition:background .15s}.text p:hover,.text p:focus-within{background:var(--acc2)}
+.text p .say{visibility:hidden}.text p:hover .say,.text p:focus-within .say{visibility:visible}@media (hover:none){.text p .say{visibility:visible}}.spk{font-weight:650;margin-right:6px}.playing{background:var(--acc2);border-radius:4px}
+.src{font-size:.8rem;color:var(--mute);margin-top:8px}
+.kl{display:none;color:var(--mute);font-size:.9rem;margin-left:22px}.text.showko .kl,.kl.open{display:block}.tx.has{cursor:pointer}
+.miss{border-bottom:1px solid var(--line);padding:8px 0;text-align:left}
+mark{background:transparent;color:inherit;font-weight:650}.text mark{font-weight:inherit}
+.hl mark{background:var(--mark);border-radius:3px;padding:0 2px}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:7px 6px}
+th{font-size:.68rem;text-transform:uppercase;color:var(--mute);letter-spacing:.05em;font-weight:700}
+.ko{color:var(--mute)}.wrong{color:var(--no);text-decoration:line-through}.right{color:var(--ok);font-weight:600}
+.ex-item{padding:10px 0;border-bottom:1px solid var(--line)}.ex-item:last-child{border-bottom:0}
+.ex-item input[type=text],.ex-item textarea{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.ex-item input[type=text]{width:220px;max-width:100%}.ex-item textarea{flex:1;min-height:44px}
+.opt{display:inline-flex;gap:5px;align-items:center;margin:4px 16px 0 0;cursor:pointer}
+.fb{margin-top:6px;font-size:.92rem;display:none}
+.fb.ok{display:block;color:var(--ok)}.fb.no{display:block;color:var(--no)}.fb.info{display:block;color:var(--ink)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:24px}
+body:not(.paged) .foot{display:none}
+.done-msg{text-align:center;padding:36px 10px}
+.note{font-size:.8rem;color:var(--mute)}
+@media print{header.top,.foot,button,select,.player{display:none!important}body.paged section.step{display:block!important}.text,.ans{display:block!important}}
+</style>
+</head>
+<body class="paged">
+<header class="top"><div class="wrap">
+  <div class="bar1"><span class="t" id="ttl"></span><label class="switch"><input type="checkbox" id="all"><span id="allLbl"></span></label></div>
+  <div class="segs" id="segs"></div>
+</div></header>
+<div class="wrap"><div id="hero" class="hero"></div><main id="steps"></main><p class="note" id="anote"></p></div>
+<script>
+const LESSON = {"title": "Au café — les articles", "level": "A1", "topic": "Commander au café", "grammar_point": "un / une / des · le / la / les", "objectives": ["카페에서 공손하게 주문하기: **Je voudrais…**", "부정관사 **un / une / des**와 정관사 **le / la / l' / les** 구별하기", "존댓말 **vous**와 반말 **tu** 알아듣기"], "dialogs": [{"title": "Au café", "register": "Vous", "context": "김 씨가 파리의 카페에서 주문해요.", "speakers": [{"name": "Le serveur", "gender": "m"}, {"name": "Mme Kim", "gender": "f"}], "lines": [{"s": 0, "t": "Bonjour madame. Vous désirez ?", "ko": "안녕하세요, 손님. 뭘 드릴까요?"}, {"s": 1, "t": "Bonjour. **Je voudrais un** café, s'il vous plaît.", "ko": "안녕하세요. 커피 한 잔 주세요."}, {"s": 0, "t": "**Un** café, très bien. Et avec ça ?", "ko": "커피 한 잔, 알겠습니다. 다른 건요?"}, {"s": 1, "t": "Vous avez **des** croissants ?", "ko": "크루아상 있어요?"}, {"s": 0, "t": "Oui. **Les** croissants sont très bons ici.", "ko": "네. 여기 크루아상 정말 맛있어요."}, {"s": 1, "t": "Alors **je voudrais un** croissant aussi. C'est combien ?", "ko": "그럼 크루아상도 하나 주세요. 얼마예요?"}, {"s": 0, "t": "**Le** café, c'est deux euros, et **le** croissant, un euro cinquante.", "ko": "커피는 2유로, 크루아상은 1유로 50이에요."}, {"s": 1, "t": "Merci beaucoup !", "ko": "정말 감사합니다!"}, {"s": 0, "t": "Avec plaisir, madame. Bonne journée !", "ko": "천만에요. 좋은 하루 보내세요!"}], "warmup": ["카페에서 주문할 때 한국어로 어떻게 말하나요?"], "q1": [{"q": "누가 이야기하고 있나요? 어디에 있나요?", "a": "손님(김 씨)과 웨이터, 카페에 있어요."}, {"q": "김 씨는 무엇을 주문하나요?", "a": "커피 한 잔과 크루아상 하나."}, {"q": "두 사람은 vous와 tu 중에서 무엇을 쓰나요?", "a": "vous (존댓말)"}], "q2": [{"q": "커피는 얼마예요?", "a": "2유로 (deux euros)"}, {"q": "크루아상은 얼마예요?", "a": "1유로 50 (un euro cinquante)"}, {"q": "웨이터는 크루아상에 대해 뭐라고 하나요?", "a": "여기 크루아상이 아주 맛있다고 해요."}], "reading": [{"q": "**un / une / des**를 모두 찾아보세요.", "a": "un café, un café, des croissants, un croissant"}, {"q": "**le / la / les**를 모두 찾아보세요.", "a": "les croissants, le café, le croissant"}, {"q": "주문할 때 어떤 표현을 쓰나요?", "a": "Je voudrais… , s'il vous plaît."}], "notes": [{"ko": "뭘 드릴까요?", "ex": "Bonjour, vous désirez ?", "t": "Vous désirez ?"}, {"ko": "그 밖에 더 필요하신 건요?", "ex": "Un thé. Et avec ça ?", "t": "Et avec ça ?"}, {"ko": "얼마예요?", "ex": "Le croissant, c'est combien ?", "t": "C'est combien ?"}, {"ko": "천만에요 / 기꺼이요", "ex": "— Merci ! — Avec plaisir.", "t": "Avec plaisir."}]}, {"title": "On mange quoi ?", "register": "Tu", "context": "친구 민지와 뤼카가 집에서 점심을 준비해요.", "speakers": [{"name": "Minji", "gender": "f"}, {"name": "Lucas", "gender": "m"}], "lines": [{"s": 1, "t": "Minji, tu as faim ?", "ko": "민지, 배고파?"}, {"s": 0, "t": "Oui ! Tu as **des** œufs ?", "ko": "응! 달걀 있어?"}, {"s": 1, "t": "Oui, j'ai **des** œufs et **une** tomate.", "ko": "응, 달걀이랑 토마토 하나 있어."}, {"s": 0, "t": "Super. **Je voudrais** bien **une** omelette !", "ko": "좋아. 오믈렛 먹고 싶다!"}, {"s": 1, "t": "D'accord. **Le** fromage est dans **le** frigo ?", "ko": "알았어. 치즈 냉장고에 있지?"}, {"s": 0, "t": "Oui, et **la** salade aussi.", "ko": "응, 샐러드도 있어."}, {"s": 1, "t": "Parfait. Toi, tu prépares **la** salade, et moi, **l'**omelette.", "ko": "좋아. 너는 샐러드 만들고, 나는 오믈렛 만들게."}, {"s": 0, "t": "Ok ! Et après, **un** café ?", "ko": "오케이! 그리고 나서 커피 한 잔?"}, {"s": 1, "t": "Bonne idée !", "ko": "좋은 생각이야!"}], "q1": [{"q": "민지와 뤼카는 어떤 사이예요?", "a": "친구예요 (tu를 써요)."}, {"q": "두 사람은 무엇을 만들어요?", "a": "오믈렛과 샐러드."}], "q2": [{"q": "뤼카 집에 무엇이 있나요?", "a": "달걀, 토마토, 치즈, 샐러드"}, {"q": "치즈는 어디에 있나요?", "a": "냉장고 안에 (dans le frigo)"}, {"q": "민지는 무엇을 준비하나요?", "a": "샐러드"}], "reading": [{"q": "왜 **l'**omelette라고 쓸까요?", "a": "omelette가 모음으로 시작해서 le/la가 l'로 바뀌어요."}, {"q": "대화 1과 대화 2에서 '~있어요?'를 어떻게 말하나요?", "a": "Vous avez… ? (대화 1) / Tu as… ? (대화 2)"}], "notes": [{"ko": "배고프다", "ex": "J'ai faim !", "t": "avoir faim"}, {"ko": "냉장고 (구어)", "ex": "Le lait est dans le frigo.", "t": "le frigo"}, {"ko": "좋은 생각이야!", "ex": "— On va au café ? — Bonne idée !", "t": "Bonne idée !"}]}], "grammar": [{"family": "부정관사 un / une / des", "note": "처음 말하는 것, '어떤 하나의' 것 앞에 써요. 명사의 성(남성/여성)과 수에 따라 달라져요.", "items": [{"form": "un", "mode": "남성 단수", "ko": "하나의 (남)", "ex": "**un** café"}, {"form": "une", "mode": "여성 단수", "ko": "하나의 (여)", "ex": "**une** tomate"}, {"form": "des", "mode": "복수", "ko": "몇몇의", "ex": "**des** croissants"}]}, {"family": "정관사 le / la / l' / les", "note": "이미 알고 있는 것이나 일반적인 것 앞에 써요.", "items": [{"form": "le", "mode": "남성 단수", "ko": "그 (남)", "ex": "**le** fromage"}, {"form": "la", "mode": "여성 단수", "ko": "그 (여)", "ex": "**la** salade"}, {"form": "l'", "mode": "모음 · 무음 h 앞", "ko": "그", "ex": "**l'**omelette"}, {"form": "les", "mode": "복수", "ko": "그 ~들", "ex": "**les** croissants"}]}, {"family": "부탁하기 · 묻기", "items": [{"form": "Je voudrais + 명사", "mode": "공손한 표현", "ko": "~주세요", "ex": "**Je voudrais** un thé."}, {"form": "Vous avez… ? / Tu as… ?", "mode": "vous / tu", "ko": "~있어요? / ~있어?", "ex": "**Vous avez** des croissants ?"}]}], "vocab": [{"ko": "커피 / 차", "ex": "Je voudrais un thé.", "t": "un café / un thé"}, {"ko": "달걀", "ex": "J'ai des œufs.", "t": "un œuf, des œufs"}, {"ko": "치즈", "ex": "J'aime le fromage.", "t": "le fromage"}, {"ko": "샐러드", "ex": "Tu prépares la salade.", "t": "la salade"}], "register": [{"formal": "Vous désirez ?", "casual": "Tu veux quoi ?"}, {"formal": "Vous avez… ?", "casual": "Tu as… ?"}, {"formal": "Bonjour madame.", "casual": "Salut !"}, {"formal": "Merci beaucoup.", "casual": "Merci !"}], "pitfalls": [{"title": "명사 앞에는 거의 항상 관사가 있어요", "explain": "한국어에는 관사가 없어서 자주 빠뜨려요.", "ko": "\"커피 주세요\" → café 앞에 un을 꼭 넣기", "wrong": "Je voudrais café.", "right": "Je voudrais **un** café."}, {"title": "명사의 성은 함께 외워요", "explain": "salade는 여성, café는 남성이에요. 단어를 외울 때 관사도 같이 외우세요.", "ko": "단어장에 'une salade'처럼 관사와 함께 적기", "wrong": "un salade", "right": "**une** salade"}, {"title": "모음 앞에서는 l'", "explain": "le, la 다음에 모음으로 시작하는 단어가 오면 l'가 돼요.", "ko": "la + omelette → l'omelette", "wrong": "la omelette", "right": "**l'**omelette"}, {"title": "des + 모음: 연음", "explain": "des œufs는 [데-죄]처럼 s를 이어서 발음해요.", "ko": "연음(liaison): des‿œufs, les‿enfants"}], "speaking": [{"q": "카페에서 주문해 보세요: « **Je voudrais** … , s'il vous plaît. »", "a": "Je voudrais un thé, s'il vous plaît. / Je voudrais un café et un croissant, s'il vous plaît."}, {"q": "냉장고 안에 무엇이 있나요? « J'ai **un / une / des** … »", "a": "J'ai des œufs, une salade et un yaourt."}, {"q": "좋아하는 음식 세 가지를 말해 보세요: « J'aime **le / la / les** … »", "a": "J'aime le fromage, la salade et les croissants."}], "exercises": [{"title": "un, une, des", "instruction": "알맞은 관사를 고르세요.", "type": "choice", "items": [{"q": "Je voudrais ___ café.", "options": ["un", "une", "des"], "answers": ["un"], "explain": "café는 남성"}, {"q": "J'ai ___ tomate.", "options": ["un", "une", "des"], "answers": ["une"], "explain": "tomate는 여성"}, {"q": "Vous avez ___ croissants ?", "options": ["un", "une", "des"], "answers": ["des"], "explain": "복수"}, {"q": "Tu prépares ___ salade ?", "options": ["un", "une", "des"], "answers": ["une"], "explain": "salade는 여성"}, {"q": "Il y a ___ œufs dans le frigo.", "options": ["un", "une", "des"], "answers": ["des"], "explain": "복수"}]}, {"title": "le, la, l', les", "instruction": "빈칸에 알맞은 정관사를 쓰세요.", "type": "fill", "items": [{"q": "___ fromage est dans le frigo.", "answers": ["le"]}, {"q": "___ salade est très bonne.", "answers": ["la"]}, {"q": "Moi, je prépare ___ omelette.", "answers": ["l'"]}, {"q": "___ croissants sont très bons ici.", "answers": ["les"]}, {"q": "Tu aimes ___ eau gazeuse ?", "answers": ["l'"], "explain": "eau는 모음으로 시작"}]}, {"title": "받아쓰기", "instruction": "문장을 듣고 써 보세요.", "type": "dictation", "items": [{"q": "Je voudrais un café."}, {"q": "Vous avez des croissants ?"}, {"q": "Le fromage est dans le frigo."}, {"q": "C'est combien ?"}]}, {"title": "프랑스어로 말해 보세요", "instruction": "한국어 문장을 프랑스어로 바꿔 쓰세요.", "type": "free", "items": [{"q": "커피 한 잔 주세요. (vous)", "answers": ["Je voudrais un café, s'il vous plaît."]}, {"q": "크루아상 있어요? (vous)", "answers": ["Vous avez des croissants ?"]}, {"q": "치즈는 냉장고에 있어.", "answers": ["Le fromage est dans le frigo."]}, {"q": "달걀 있어? (tu)", "answers": ["Tu as des œufs ?"]}]}], "audio_note": "오디오: 브라우저 음성", "lang": "fr-FR", "culture": {"title": "프랑스 카페에서", "text": "프랑스에서 « un café »라고 하면 보통 작은 에스프레소가 나와요. 우유가 들어간 커피는 « un café crème »이에요. 들어갈 때 « Bonjour »라고 인사하는 것은 아주 중요해요!"}};
+const STR = {
+ fr:{all:'Tout afficher',step:'Étape',of:'sur',next:'Suivant',prev:'Précédent',finish:'Terminer',bravo:'Bravo ! Leçon terminée.',again:'Recommencer',listen:'Écouter',stop:'Stop',speed:'Vitesse',dlg:'Dialogue',art:'Article',src:'Source',warm:"Avant d'écouter",warmA:'Avant de lire',l1:'1re écoute — compréhension globale',l1h:'Écoutez sans lire la transcription.',l2:'2e écoute — compréhension détaillée',l2h:'Réécoutez et répondez plus précisément.',rd:'Lecture — transcription et repérage',rdh:'Lisez la transcription et repérez les structures de la leçon.',a1:'1re lecture — compréhension globale',a1h:'Lisez (ou écoutez) le texte une première fois.',a2:'2e lecture — compréhension détaillée',a2h:'Relisez et répondez plus précisément.',a3:'Repérage — vocabulaire et structures',a3h:'Repérez les structures de la leçon dans le texte.',q:'Questions',ans:'Réponses',tr:'Transcription',hl:'Surligner les structures',expr:'Expressions',lesson:'La leçon',voc:'Vocabulaire',reg:'Registre',pit:'Points difficiles pour un apprenant coréen',spk:'Production orale',spkh:'Répondez à voix haute en réutilisant au moins une structure de la leçon.',ex:'Exercices',exn:'Exercice',chk:'Vérifier',cor:'Correction',exp:'Réponse attendue',ok:'Correct',score:'Score',ph:'Votre réponse…',say:'Écouter la prononciation',kot:'Traduction coréenne',line:'Réécouter cette phrase',cult:'Culture',review:'À revoir',noerr:'Aucune erreur, bravo !',retry:'Refaire mes erreurs',prac:'Pour un entraînement adaptatif, écrivez à Claude : « Entraînement adaptatif sur cette leçon ».',h:{struct:'Structure',form:'Construction',ko:'한국어',exm:'Exemple',expr:'Expression',word:'Mot',f:'Soutenu',c:'Familier'}},
+ en:{all:'Show all',step:'Step',of:'of',next:'Next',prev:'Previous',finish:'Finish',bravo:'Well done! Lesson complete.',again:'Start again',listen:'Listen',stop:'Stop',speed:'Speed',dlg:'Dialogue',art:'Article',src:'Source',warm:'Before listening',warmA:'Before reading',l1:'1st listening — gist',l1h:'Listen without reading the transcript.',l2:'2nd listening — details',l2h:'Listen again and answer more precisely.',rd:'Reading — transcript and spotting',rdh:'Read the transcript and spot the lesson structures.',a1:'1st reading — gist',a1h:'Read (or listen to) the text once.',a2:'2nd reading — details',a2h:'Read again and answer more precisely.',a3:'Spotting — vocabulary and structures',a3h:'Find the lesson structures in the text.',q:'Questions',ans:'Answers',tr:'Transcript',hl:'Highlight structures',expr:'Expressions',lesson:'The lesson',voc:'Vocabulary',reg:'Register',pit:'Difficult points for Korean learners',spk:'Speaking',spkh:'Answer out loud, reusing at least one structure from the lesson.',ex:'Exercises',exn:'Exercise',chk:'Check',cor:'Answer',exp:'Expected',ok:'Correct',score:'Score',ph:'Your answer…',say:'Listen to pronunciation',kot:'Korean translation',line:'Replay this line',cult:'Culture',review:'To review',noerr:'No mistakes — well done!',retry:'Retry my mistakes',prac:'For adaptive practice, write to Claude: "Adaptive practice on this lesson".',h:{struct:'Structure',form:'Form',ko:'한국어',exm:'Example',expr:'Expression',word:'Word',f:'Formal',c:'Casual'}},
+ ko:{all:'전체 보기',step:'단계',of:'/',next:'다음',prev:'이전',finish:'마치기',bravo:'수고했어요! 수업을 모두 마쳤어요.',again:'처음부터',listen:'듣기',stop:'정지',speed:'속도',dlg:'대화',art:'기사',src:'출처',warm:'듣기 전에',warmA:'읽기 전에',l1:'첫 번째 듣기 — 전체 이해',l1h:'대본을 보지 말고 들어 보세요.',l2:'두 번째 듣기 — 세부 내용',l2h:'다시 듣고 더 자세히 답해 보세요.',rd:'읽기 — 대본과 표현 찾기',rdh:'대본을 읽고 핵심 표현을 찾아보세요.',a1:'첫 번째 읽기 — 전체 이해',a1h:'글을 한 번 읽어 보세요 (들어도 돼요).',a2:'두 번째 읽기 — 세부 내용',a2h:'다시 읽고 더 자세히 답해 보세요.',a3:'표현 찾기 — 어휘와 문법',a3h:'글에서 핵심 표현을 찾아보세요.',q:'질문',ans:'정답',tr:'대본',hl:'핵심 표현 표시',expr:'표현',lesson:'문법과 어휘',voc:'어휘',reg:'말투: 격식 ↔ 친근',pit:'한국인 학습자가 자주 틀리는 점',spk:'말하기 연습',spkh:'이번 과의 표현을 하나 이상 써서 소리 내어 대답해 보세요.',ex:'연습 문제',exn:'연습',chk:'확인',cor:'정답',exp:'정답',ok:'정답이에요',score:'점수',ph:'답을 써 보세요…',say:'발음 듣기',kot:'한국어 번역',line:'이 문장 다시 듣기',cult:'문화 노트',review:'다시 볼 문제',noerr:'틀린 문제가 없어요!',retry:'틀린 문제 다시 풀기',prac:'한 문제씩 바로 피드백을 받고 싶다면 Claude에게 « 이 수업으로 맞춤 연습 »이라고 써 보세요.',h:{struct:'표현',form:'형태',ko:'뜻',exm:'예문',expr:'표현',word:'단어',f:'격식',c:'친근'}}
+};
+const L = LESSON || {title:'—',level:'',dialogs:[]};
+const LANG = L.lang || 'fr-FR', LP = LANG.slice(0, 2).toLowerCase();
+const UI0 = L.ui_lang || (/^A/i.test(L.level) ? 'ko' : LP), UI = STR[UI0] || L.ui_strings ? UI0 : 'ko', S = Object.assign({}, STR[UI] || STR.ko, L.ui_strings || {});
+const SV = p => `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const IC = { play: SV('<path d="M7 4.5v15l12-7.5z" fill="currentColor" stroke="none"/>'), stop: SV('<rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor" stroke="none"/>'), say: SV('<path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/>'), eye: SV('<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'), doc: SV('<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>'), pen: SV('<path d="m9 11-6 6v3h3l6-6"/><path d="m22 6-4-4-9 9 4 4z"/>'), check: SV('<path d="M20 6 9 17l-5-5"/>'), left: SV('<path d="M15 18l-6-6 6-6"/>'), right: SV('<path d="M9 18l6-6-6-6"/>'), ko: '<b style="font-size:13px">가</b>' };
+const $ = (t, a = {}, ...kids) => { const e = document.createElement(t); for (const [k, v] of Object.entries(a)) { if (k === 'class') e.className = v; else if (k === 'html') e.innerHTML = v; else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); } for (const c of kids.flat()) if (c != null && c !== false) e.append(c.nodeType ? c : document.createTextNode(c)); return e; };
+const ib = (icon, label, onclick, cls = '') => $('button', { class: 'icon ' + cls, html: IC[icon], 'aria-label': label, title: label, onclick });
+const toggle = (icon, label, target, cls) => { const b = ib(icon, label, () => { target.classList.toggle(cls); b.classList.toggle('on', cls === 'hidden' ? !target.classList.contains(cls) : target.classList.contains(cls)); }); return b; };
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<mark>$1</mark>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+const plain = s => String(s ?? '').replace(/\*\*?(.+?)\*\*?/g, '$1');
+/* ---- speech ---- */
+const FEM = /(am[ée]lie|audrey|marie|denise|vivienne|julie|c[ée]line|hortense|virginie|aur[ée]lie|[ée]lo[ïi]se|female|femme|charlotte|sylvie|ariane|samantha|karen|moira|monica|paulina|anna|helena)/i, MAL = /(thomas|henri|r[ée]my|paul|daniel|nicolas|jean|antoine|male|homme|guillaume|yves|lucien|alex|jorge|diego|markus)/i;
+let VOICES = [], tok = 0; const HAS = 'speechSynthesis' in window;
+const loadV = () => { const full = new RegExp(LANG, 'i'); VOICES = speechSynthesis.getVoices().filter(v => v.lang.toLowerCase().startsWith(LP)).sort((a, b) => (full.test(b.lang) - full.test(a.lang)) || (/natural|neural|premium|enhanced|google/i.test(b.name) - /natural|neural|premium|enhanced|google/i.test(a.name))); };
+if (HAS) { loadV(); speechSynthesis.onvoiceschanged = loadV; }
+const voiceFor = (g, i) => { const p = VOICES.filter(v => (g === 'm' ? MAL : FEM).test(v.name)); if (p.length) return [p[0], 1]; if (VOICES.length > 1) return [VOICES[i % VOICES.length], 1]; return [VOICES[0] || null, g === 'm' ? .8 : 1.2]; };
+const utter = (text, g, i, rate) => new Promise(r => { const u = new SpeechSynthesisUtterance(plain(text)); const [v, p] = voiceFor(g, i); u.lang = LANG; if (v) u.voice = v; u.pitch = p; u.rate = rate; u.onend = u.onerror = r; speechSynthesis.speak(u); });
+function stopAll() { tok++; if (HAS) speechSynthesis.cancel(); document.querySelectorAll('audio').forEach(a => a.pause()); document.querySelectorAll('.playing').forEach(l => l.classList.remove('playing')); }
+const say = text => { if (!HAS) return; stopAll(); utter(text, 'f', 0, .85); };
+async function speak(d, rate, els) { stopAll(); const my = tok; for (let i = 0; i < d.lines.length; i++) { if (my !== tok) return; const ln = d.lines[i]; els.forEach(x => x[i] && x[i].classList.add('playing')); await utter(ln.t, (d.speakers[ln.s] || {}).gender, ln.s, rate); els.forEach(x => x[i] && x[i].classList.remove('playing')); await new Promise(r => setTimeout(r, 350)); } }
+function player(d, els) {
+  const def = String(L.rate || (/^A/i.test(L.level) ? .8 : .9));
+  const rate = $('select', { 'aria-label': S.speed, title: S.speed }, ...['0.7', '0.8', '0.9', '1'].map(v => $('option', { value: v }, '×' + v))); rate.value = def;
+  if (d.audio) { const au = $('audio', { controls: '', preload: 'metadata', src: d.audio }); au.playbackRate = +def; rate.onchange = () => au.playbackRate = +rate.value; return $('div', { class: 'player' }, au, rate); }
+  return $('div', { class: 'player' }, ib('play', S.listen, () => HAS && speak(d, +rate.value, els), 'big'), ib('stop', S.stop, stopAll), rate);
+}
+const sayBtn = text => $('button', { class: 'say', html: IC.say, title: S.say, 'aria-label': S.say, onclick: () => say(text) });
+const table = (head, rows, sayCols = []) => $('table', {}, $('thead', {}, $('tr', {}, head.map(h => $('th', {}, h)))), $('tbody', {}, rows.map(r => $('tr', {}, r.map((c, i) => { const td = $('td', { class: head[i] === S.h.ko ? 'ko' : '' }); if (sayCols.includes(i) && c) td.append(sayBtn(c)); td.append($('span', { html: fmt(c) })); return td; })))));
+const block = (label, right, ...kids) => $('div', { class: 'block' }, label || right ? $('div', { class: 'bhead' }, $('span', { class: 'label' }, label || ''), right || null) : null, ...kids);
+function questions(items, label) {
+  const box = $('div', {}, $('ol', { class: 'q' }, items.map(x => $('li', {}, $('span', { html: fmt(x.q) }), x.a ? $('div', { class: 'ans', html: '→ ' + fmt(x.a) }) : null))));
+  return block(label, items.some(x => x.a) ? toggle('eye', S.ans, box, 'show-ans') : null, box);
+}
+/* ---- exercises ---- */
+const norm = s => String(s ?? '').toLowerCase().replace(/[’`]/g, "'").replace(/\s+/g, ' ').replace(/\s*([,.;:!?])\s*/g, '$1').replace(/[.!]+$/, '').trim();
+const SC = { ok: 0, n: 0 }, scoreEl = $('span', { class: 'label' }), MISS = new Map();
+const normD = s => norm(s).replace(/[,.;:!?¿¡«»"]/g, '').replace(/\s+/g, ' ').trim();
+function exercise(ex, n) {
+  const c = block(`${S.exn} ${n} · ${ex.title}`, null, $('p', { class: 'hint', html: fmt(ex.instruction) }));
+  ex.items.forEach((it, i) => {
+    const dict = ex.type === 'dictation', ans = it.answers || [it.q], key = n + '_' + i;
+    const fb = $('div', { class: 'fb' }), box = $('div', { class: 'ex-item' }, dict ? null : $('div', { html: `<b>${i + 1}.</b> ` + fmt(it.q) })); let done = false;
+    const why = it.explain ? ' — ' + fmt(it.explain) : '';
+    const reset = () => { box.querySelectorAll('input').forEach(x => { if (x.type === 'radio') x.checked = false; else x.value = ''; }); fb.className = 'fb'; };
+    const grade = v => { if (v == null || !String(v).trim()) return; const N2 = dict ? normD : norm, good = ans.some(a => N2(plain(a)) === N2(v)); if (!done) { done = true; SC.n++; if (good) SC.ok++; scoreEl.textContent = `${S.score} ${SC.ok}/${SC.n}`; } if (good) MISS.delete(key); else MISS.set(key, { q: dict ? ans[0] : it.q, ans, why, reset }); fb.className = 'fb ' + (good ? 'ok' : 'no'); fb.innerHTML = (good ? '✓ ' + S.ok : `✗ ${S.exp} : <b>` + ans.map(fmt).join(' / ') + '</b>') + why; };
+    if (ex.type === 'choice') box.append($('div', {}, it.options.map(o => $('label', { class: 'opt' }, $('input', { type: 'radio', name: `e${n}_${i}`, value: o, onchange: e => grade(e.target.value) }), $('span', { html: fmt(o) })))));
+    else if (dict) { const inp = $('input', { type: 'text', autocomplete: 'off', spellcheck: 'false', style: 'flex:1', onkeydown: e => e.key === 'Enter' && grade(inp.value) }); box.append($('div', { class: 'row' }, $('b', {}, `${i + 1}.`), ib('play', S.listen, () => { if (HAS) { stopAll(); utter(ans[0], 'f', 0, .75); } }), inp, ib('check', S.chk, () => grade(inp.value)))); }
+    else if (ex.type === 'fill') { const inp = $('input', { type: 'text', autocomplete: 'off', spellcheck: 'false', onkeydown: e => e.key === 'Enter' && grade(inp.value) }); box.append($('div', { class: 'row', style: 'margin-top:4px' }, inp, ib('check', S.chk, () => grade(inp.value)))); }
+    else box.append($('div', { class: 'row', style: 'margin-top:4px;align-items:flex-start' }, $('textarea', { placeholder: S.ph }), ib('eye', S.cor, () => { fb.className = 'fb info'; fb.innerHTML = '→ ' + it.answers.map(fmt).join(' / ') + why; })));
+    box.append(fb); c.append(box);
+  });
+  return c;
+}
+/* ---- steps ---- */
+const STEPS = [];
+const add = (kicker, title, hint, ...kids) => STEPS.push({ kicker, title, el: $('div', {}, hint ? $('p', { class: 'hint', html: fmt(hint) }) : null, ...kids) });
+L.dialogs.forEach((d, k) => {
+  const art = d.kind === 'article', kick = `${art ? S.art : S.dlg + ' ' + (k + 1)} · ${d.title}`, els = [];
+  const sayLine = l => { if (!HAS) return; stopAll(); utter(l.t, (d.speakers[l.s] || {}).gender, l.s, +(L.rate || (/^A/i.test(L.level) ? .8 : .9))); };
+  const textBox = (hidden) => { const box = $('div', { class: 'text' + (hidden ? ' hidden' : '') }), ps = d.lines.map(l => { const kl = l.ko ? $('div', { class: 'kl' }, l.ko) : null; return $('p', {}, $('button', { class: 'say', html: IC.say, title: S.line, 'aria-label': S.line, onclick: () => sayLine(l) }), !art && d.speakers[l.s] ? $('span', { class: 'spk' }, d.speakers[l.s].name + ' :') : null, $('span', { class: 'tx' + (kl ? ' has' : ''), html: fmt(l.t), onclick: () => kl && kl.classList.toggle('open') }), kl); }); box.append(...ps); els.push(ps); if (art && d.source) box.append($('div', { class: 'src' }, S.src + ' : ', d.source.url ? $('a', { href: d.source.url, target: '_blank', rel: 'noopener' }, d.source.name || d.source.url) : d.source.name, d.source.license ? ' · ' + d.source.license : '', d.source.adapted ? ' · ' + d.source.adapted : '')); return box; };
+  const ctx = $('div', { style: 'margin-top:10px' }, d.register ? $('span', { class: 'pill' }, d.register) : null, $('span', { class: 'note' }, d.context || ''));
+  const warm = d.warmup && d.warmup.length ? block(art ? S.warmA : S.warm, null, $('ol', { class: 'q' }, d.warmup.map(w => $('li', { html: fmt(w) })))) : null;
+  const notes = d.notes && d.notes.length ? block(S.expr, null, table([S.h.expr, S.h.ko, S.h.exm], d.notes.map(v => [v.t ?? v.fr, v.ko, v.ex]), [0])) : null;
+  if (art) {
+    add(kick, S.a1, S.a1h, ctx, warm, player(d, els), textBox(false), questions(d.q1, S.q));
+    add(kick, S.a2, S.a2h, player(d, els), textBox(false), questions(d.q2, S.q));
+    const t = textBox(false), hasKo = d.lines.some(l => l.ko); add(kick, S.a3, S.a3h, $('div', { class: 'row', style: 'margin-top:12px' }, toggle('pen', S.hl, t, 'hl'), hasKo ? toggle('ko', S.kot, t, 'showko') : null), t, questions(d.reading, S.q), notes);
+  } else {
+    add(kick, S.l1, S.l1h, ctx, player(d, els), warm, questions(d.q1, S.q));
+    add(kick, S.l2, S.l2h, player(d, els), questions(d.q2, S.q));
+    const t = textBox(true), tb = toggle('doc', S.tr, t, 'hidden');
+    const p3 = player(d, els); p3.append($('span', { style: 'flex:1' }), tb, toggle('pen', S.hl, t, 'hl'), d.lines.some(l => l.ko) ? toggle('ko', S.kot, t, 'showko') : null);
+    add(kick, S.rd, S.rdh, p3, t, questions(d.reading, S.q), notes);
+    STEPS[STEPS.length - 1].onEnter = () => { if (t.classList.contains('hidden')) tb.click(); };
+  }
+});
+add(S.lesson, S.lesson, null, ...(L.grammar || []).map(g => block(null, null, $('h3', {}, g.family), g.note ? $('p', { class: 'hint', html: fmt(g.note) }) : null, table([S.h.struct, S.h.form, S.h.ko, S.h.exm], g.items.map(x => [x.form, x.mode || '', x.ko || '', x.ex || '']), [3]))),
+  L.vocab && L.vocab.length ? block(S.voc, null, table([S.h.word, S.h.ko, S.h.exm], L.vocab.map(v => [v.t ?? v.fr, v.ko, v.ex]), [0])) : null,
+  L.register && L.register.length ? block(S.reg, null, table([S.h.f, S.h.c], L.register.map(r => [r.formal, r.casual]), [0, 1])) : null,
+  L.culture ? block(S.cult, null, L.culture.title ? $('h3', { html: fmt(L.culture.title) }) : null, $('p', { style: 'margin:0', html: fmt(L.culture.text) })) : null);
+add(S.pit, S.pit, null, ...(L.pitfalls || []).map(p => block(null, null, $('h3', { html: fmt(p.title) }), $('p', { html: fmt(p.explain), style: 'margin:0 0 4px' }), p.ko ? $('p', { class: 'ko', style: 'margin:0 0 4px', html: fmt(p.ko) }) : null, p.wrong ? $('p', { style: 'margin:0' }, $('span', { class: 'wrong', html: fmt(p.wrong) }), '  →  ', $('span', { class: 'right', html: fmt(p.right) })) : null)));
+add(S.spk, S.spk, S.spkh, questions((L.speaking || []).map(s => typeof s === 'string' ? { q: s } : s), null));
+add(S.ex, S.ex, null, ...(L.exercises || []).map((e, i) => exercise(e, i + 1)), block(null, null, scoreEl, $('p', { class: 'note' }, S.prac)));
+/* ---- render & navigation ---- */
+const KEY = 'lesson:' + L.title; let st = { cur: 0, max: 0, fin: false };
+try { st = Object.assign(st, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+const N = STEPS.length, main = document.getElementById('steps'); if (st.cur >= N) st.cur = 0;
+STEPS.forEach((s, i) => {
+  const foot = $('div', { class: 'foot' }, i ? ib('left', S.prev, () => go(i - 1)) : $('span'), $('span', { class: 'note' }, `${i + 1} ${S.of} ${N}`), $('button', { class: 'primary', onclick: () => i < N - 1 ? go(i + 1, true) : finish() }, i < N - 1 ? S.next + ' →' : S.finish + ' ✓'));
+  s.sec = $('section', { class: 'step', id: 'step-' + (i + 1) }, s.kicker !== s.title ? $('div', { class: 'kicker' }, s.kicker) : null, $('h2', {}, s.title), s.el, foot); main.append(s.sec);
+});
+const doneSec = $('section', { class: 'step done-msg' }); main.append(doneSec);
+function renderDone() {
+  doneSec.innerHTML = ''; const miss = [...MISS.values()];
+  doneSec.append($('h2', {}, '🎉 ' + S.bravo), SC.n ? $('p', { class: 'label' }, `${S.score} ${SC.ok}/${SC.n}`) : null,
+    miss.length ? block(S.review, null, ...miss.map(m => $('div', { class: 'miss' }, $('div', { html: fmt(m.q) }), $('div', { class: 'right', html: '→ ' + m.ans.map(fmt).join(' / ') + m.why })))) : $('p', {}, S.noerr),
+    $('div', { class: 'row', style: 'justify-content:center;margin-top:18px' }, miss.length ? $('button', { class: 'primary', onclick: () => { miss.forEach(m => m.reset()); st.fin = false; go(N - 1); } }, S.retry) : null, $('button', { onclick: () => { st.fin = false; go(0); } }, S.again)),
+    $('p', { class: 'note' }, S.prac));
+}
+function finish() { st.fin = true; st.max = N; save(); stopAll(); renderDone(); update(); window.scrollTo(0, 0); }
+function go(i, completed) { if (completed) st.max = Math.max(st.max, i); st.cur = i; st.fin = false; save(); stopAll(); update(); if (STEPS[i].onEnter) STEPS[i].onEnter(); window.scrollTo(0, 0); }
+function update() {
+  const all = document.getElementById('all').checked; document.body.classList.toggle('paged', !all);
+  document.getElementById('hero').style.display = !all && (st.cur > 0 || st.fin) ? 'none' : '';
+  STEPS.forEach((s, i) => s.sec.classList.toggle('active', !st.fin && i === st.cur)); doneSec.classList.toggle('active', st.fin); doneSec.style.display = all ? 'none' : '';
+  const segs = document.getElementById('segs'); segs.innerHTML = '';
+  STEPS.forEach((s, i) => { const reach = i <= st.max; const b = $('button', { class: 'seg' + (i < st.max || st.fin ? ' done' : '') + (!st.fin && i === st.cur && !all ? ' cur' : '') + (reach ? ' nav' : ''), title: `${S.step} ${i + 1} — ${s.kicker} · ${s.title}`, 'aria-label': `${S.step} ${i + 1}` }); if (reach) b.onclick = () => all ? s.sec.scrollIntoView({ behavior: 'smooth' }) : go(i); segs.append(b); });
+}
+document.getElementById('ttl').textContent = L.title; document.title = L.title; document.documentElement.lang = UI;
+document.getElementById('allLbl').textContent = S.all; document.getElementById('all').onchange = () => { stopAll(); update(); };
+document.getElementById('hero').append($('h1', {}, L.title), $('div', {}, L.level ? $('span', { class: 'pill' }, L.level) : null, L.grammar_point ? $('span', { class: 'pill' }, L.grammar_point) : null, L.topic ? $('span', { class: 'pill' }, L.topic) : null), L.objectives ? $('ul', { class: 'goals' }, L.objectives.map(o => $('li', { html: fmt(o) }))) : null);
+document.getElementById('anote').textContent = L.audio_note || '';
+if (st.fin) renderDone(); update(); if (!st.fin && STEPS[st.cur] && STEPS[st.cur].onEnter) STEPS[st.cur].onEnter();
+</script>
+</body>
+</html>

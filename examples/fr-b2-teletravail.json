@@ -1,0 +1,620 @@
+{
+ "title": "Le télétravail — exprimer le but",
+ "level": "B2",
+ "topic": "Le télétravail",
+ "grammar_point": "L'expression du but",
+ "objectives": [
+  "Comprendre deux dialogues sur le télétravail, en registre **soutenu** et **familier**",
+  "Exprimer le but avec l'**infinitif** (même sujet) ou le **subjonctif** (sujets différents)",
+  "Exprimer un but négatif ou une crainte : *pour ne pas, de peur de / que*"
+ ],
+ "dialogs": [
+  {
+   "title": "La nouvelle charte",
+   "register": "Soutenu",
+   "context": "Une DRH présente un projet de charte sur le télétravail au directeur général.",
+   "speakers": [
+    {
+     "name": "Mme Lambert",
+     "gender": "f"
+    },
+    {
+     "name": "M. Ferrand",
+     "gender": "m"
+    }
+   ],
+   "lines": [
+    {
+     "s": 0,
+     "t": "Monsieur Ferrand, je vous ai demandé ce rendez-vous **afin de** vous présenter notre projet de charte sur le télétravail.",
+     "ko": "페랑 씨, 재택근무 규정안을 소개해 드리려고 이 미팅을 요청했습니다."
+    },
+    {
+     "s": 1,
+     "t": "Je vous écoute. Mais je vous préviens : je ne veux pas d'une mesure prise uniquement **pour que** les salariés soient contents.",
+     "ko": "말씀하세요. 다만 미리 말해 두는데, 직원들 기분만 맞추려고 만든 조치는 원하지 않아요."
+    },
+    {
+     "s": 0,
+     "t": "Rassurez-vous. L'objectif est double : réduire les trajets **de manière à** limiter la fatigue, et réorganiser les bureaux **dans le but de** faire des économies.",
+     "ko": "걱정 마세요. 목표는 두 가지예요. 피로를 줄이도록 출퇴근을 줄이고, 비용을 아끼려고 사무실을 재배치하는 거예요."
+    },
+    {
+     "s": 1,
+     "t": "Soit. Et comment comptez-vous maintenir la cohésion des équipes ?",
+     "ko": "좋아요. 그럼 팀 결속력은 어떻게 유지할 생각이죠?"
+    },
+    {
+     "s": 0,
+     "t": "Nous imposerons deux jours de présence par semaine, **de sorte que** chacun puisse rencontrer ses collègues régulièrement.",
+     "ko": "주 2일 출근을 의무화해서 모두가 동료들을 정기적으로 만날 수 있게 할 거예요."
+    },
+    {
+     "s": 1,
+     "t": "Bien. Je crains toutefois que certains managers ne s'y opposent, **de peur de** perdre le contrôle de leurs équipes.",
+     "ko": "좋습니다. 그래도 일부 매니저들이 팀 통제력을 잃을까 봐 반대할까 걱정이네요."
+    },
+    {
+     "s": 0,
+     "t": "C'est pourquoi nous prévoyons une formation, **en vue de** les accompagner. Nous ferons **en sorte qu'**aucun d'entre eux ne se sente mis à l'écart.",
+     "ko": "그래서 그들을 돕기 위한 교육을 준비하고 있어요. 아무도 소외감을 느끼지 않도록 하겠습니다."
+    },
+    {
+     "s": 1,
+     "t": "Très bien. Envoyez-moi le document **pour que** je puisse l'étudier avant le comité de direction de jeudi.",
+     "ko": "좋아요. 목요일 경영진 회의 전에 검토할 수 있게 문서를 보내 주세요."
+    }
+   ],
+   "warmup": [
+    "Avez-vous déjà travaillé ou étudié à distance ? Qu'en avez-vous pensé ?",
+    "Selon vous, pourquoi une entreprise écrirait-elle une « charte » sur le télétravail ?"
+   ],
+   "q1": [
+    {
+     "q": "Qui parle ? Quelle est leur relation ?",
+     "a": "Une DRH (Mme Lambert) et le directeur (M. Ferrand) : relation professionnelle, hiérarchique."
+    },
+    {
+     "q": "De quoi parlent-ils ?",
+     "a": "D'un projet de charte pour organiser le télétravail."
+    },
+    {
+     "q": "Au début, le directeur est-il enthousiaste ou méfiant ?",
+     "a": "Méfiant : il ne veut pas d'une mesure seulement destinée à faire plaisir aux salariés."
+    }
+   ],
+   "q2": [
+    {
+     "q": "Quels sont les deux objectifs de la charte ?",
+     "a": "Limiter la fatigue liée aux trajets et faire des économies sur les bureaux."
+    },
+    {
+     "q": "Combien de jours de présence seront obligatoires ? Pourquoi ?",
+     "a": "Deux jours par semaine, pour que chacun rencontre ses collègues (cohésion)."
+    },
+    {
+     "q": "Que craint M. Ferrand ?",
+     "a": "Que certains managers s'opposent au projet, par peur de perdre le contrôle."
+    },
+    {
+     "q": "Quelle solution propose Mme Lambert ?",
+     "a": "Une formation pour accompagner les managers."
+    }
+   ],
+   "reading": [
+    {
+     "q": "Relevez toutes les expressions de but.",
+     "a": "afin de, pour que, de manière à, dans le but de, de sorte que, de peur de, en vue de, faire en sorte que"
+    },
+    {
+     "q": "Lesquelles sont suivies d'un infinitif ? d'un subjonctif ?",
+     "a": "Infinitif : afin de, de manière à, dans le but de, de peur de, en vue de. Subjonctif : pour que, de sorte que, faire en sorte que."
+    },
+    {
+     "q": "Pourquoi « pour que **je** puisse » et non « pour pouvoir » dans la dernière réplique ?",
+     "a": "Les sujets sont différents (vous envoyez / je puisse) → que + subjonctif."
+    }
+   ],
+   "notes": [
+    {
+     "ko": "헌장, (사내) 규정",
+     "ex": "La charte fixe les règles du télétravail.",
+     "t": "une charte"
+    },
+    {
+     "ko": "결속력, 단합",
+     "ex": "Les séminaires renforcent la cohésion.",
+     "t": "la cohésion (d'une équipe)"
+    },
+    {
+     "ko": "~을 소외시키다, 따돌리다",
+     "ex": "Il se sent mis à l'écart depuis la réorganisation.",
+     "t": "mettre qqn à l'écart"
+    },
+    {
+     "ko": "좋습니다, 그렇다 칩시다 (격식)",
+     "ex": "Soit, admettons que vous ayez raison.",
+     "t": "Soit."
+    }
+   ]
+  },
+  {
+   "title": "Bureau ou canapé ?",
+   "register": "Familier",
+   "context": "Léa et Karim, colocataires, travaillent tous les deux depuis l'appartement.",
+   "speakers": [
+    {
+     "name": "Léa",
+     "gender": "f"
+    },
+    {
+     "name": "Karim",
+     "gender": "m"
+    }
+   ],
+   "lines": [
+    {
+     "s": 0,
+     "t": "Tu bosses encore depuis le canapé ? Viens à la table, **histoire de** te tenir droit !",
+     "ko": "아직도 소파에서 일해? 자세 좀 바르게 하게 테이블로 와!"
+    },
+    {
+     "s": 1,
+     "t": "Arrête, je suis très bien là. Et puis j'ai mis mon casque **pour ne pas** t'entendre râler.",
+     "ko": "그만해, 여기 완전 편해. 그리고 너 투덜대는 거 안 들으려고 헤드폰 꼈어."
+    },
+    {
+     "s": 0,
+     "t": "Très drôle. Sérieux, tu devrais aller au bureau demain, **pour que** ton chef voie que tu existes.",
+     "ko": "재밌네. 진짜로, 내일은 회사 좀 가. 팀장님이 너 살아 있는 거 알게."
+    },
+    {
+     "s": 1,
+     "t": "Il le sait, t'inquiète. Je lui envoie un message tous les matins, **histoire qu'**il ne se pose pas de questions.",
+     "ko": "알아, 걱정 마. 매일 아침 메시지 보내거든. 쓸데없는 생각 안 하시게."
+    },
+    {
+     "s": 0,
+     "t": "Mouais. Moi, je vais au coworking deux fois par semaine, **de peur de** devenir complètement sauvage.",
+     "ko": "글쎄. 난 완전히 사람 안 만나게 될까 봐 일주일에 두 번 공유 오피스에 가."
+    },
+    {
+     "s": 1,
+     "t": "Le bureau, c'est une heure de métro **pour** aller m'asseoir devant le même écran. Très peu pour moi.",
+     "ko": "회사는 똑같은 화면 앞에 앉으려고 지하철 한 시간이야. 난 사양할래."
+    },
+    {
+     "s": 0,
+     "t": "Peut-être, mais ça sert aussi à voir du monde. Toi, tu ne sors plus que **pour** acheter du pain !",
+     "ko": "그럴 수도. 근데 사람 만나는 데도 의미가 있어. 너는 빵 사러 갈 때만 나가잖아!"
+    },
+    {
+     "s": 1,
+     "t": "Et je parle vingt minutes avec la boulangère, **rien que pour** avoir des nouvelles du quartier. Tu vois, je suis très sociable.",
+     "ko": "그리고 동네 소식 들으려고 빵집 사장님이랑 20분이나 얘기해. 봐, 나 엄청 사교적이야."
+    },
+    {
+     "s": 0,
+     "t": "Bon, ferme la porte, **que** je puisse passer mon appel tranquille.",
+     "ko": "자, 문 좀 닫아 줘. 조용히 통화하게."
+    },
+    {
+     "s": 1,
+     "t": "Ok, ok. Je vais me faire un café **pour** fêter ma productivité.",
+     "ko": "알았어, 알았어. 내 생산성을 축하하려고 커피 한잔 타야겠다."
+    }
+   ],
+   "warmup": [
+    "Où préférez-vous travailler chez vous : à un bureau, sur le canapé, au café ?"
+   ],
+   "q1": [
+    {
+     "q": "Qui parle et où sont-ils ?",
+     "a": "Deux colocataires, Léa et Karim, chez eux."
+    },
+    {
+     "q": "Sur quoi ne sont-ils pas d'accord ?",
+     "a": "Sur la façon de télétravailler : Léa pense que Karim devrait sortir et aller au bureau ; Karim préfère rester chez lui."
+    },
+    {
+     "q": "Le ton est-il sérieux, ironique, en colère ?",
+     "a": "Plutôt taquin et ironique, amical."
+    }
+   ],
+   "q2": [
+    {
+     "q": "Pourquoi Karim a-t-il mis son casque ?",
+     "a": "Pour ne pas entendre Léa râler."
+    },
+    {
+     "q": "Pourquoi envoie-t-il un message à son chef tous les matins ?",
+     "a": "Pour que son chef ne se pose pas de questions."
+    },
+    {
+     "q": "Pourquoi Léa va-t-elle au coworking ?",
+     "a": "De peur de devenir « sauvage », c'est-à-dire de ne plus voir personne."
+    },
+    {
+     "q": "Que demande Léa à la fin, et pourquoi ?",
+     "a": "De fermer la porte, pour passer son appel tranquillement."
+    }
+   ],
+   "reading": [
+    {
+     "q": "Relevez les expressions de but. Lesquelles sont familières ?",
+     "a": "histoire de, pour ne pas, pour que, histoire que, de peur de, pour, rien que pour, (impératif +) que. Familières : histoire de / histoire que, rien que pour, « ferme la porte, que… »."
+    },
+    {
+     "q": "Dans « ferme la porte, **que** je puisse passer mon appel », que signifie « que » ?",
+     "a": "« pour que » : à l'oral, après un impératif, on peut dire simplement « que » + subjonctif."
+    },
+    {
+     "q": "Trouvez dans ce dialogue l'équivalent familier de « afin de » et de « afin que ».",
+     "a": "histoire de / histoire que"
+    }
+   ],
+   "notes": [
+    {
+     "ko": "일하다 (구어)",
+     "ex": "Je bosse tard ce soir.",
+     "t": "bosser"
+    },
+    {
+     "ko": "투덜대다, 불평하다",
+     "ex": "Il râle tout le temps contre la météo.",
+     "t": "râler"
+    },
+    {
+     "ko": "걱정 마 (= ne t'inquiète pas, 구어)",
+     "ex": "T'inquiète, je m'en occupe.",
+     "t": "t'inquiète"
+    },
+    {
+     "ko": "글쎄… (반신반의)",
+     "ex": "— C'est facile ! — Mouais…",
+     "t": "Mouais."
+    },
+    {
+     "ko": "난 사양할래",
+     "ex": "Faire la queue deux heures ? Très peu pour moi.",
+     "t": "Très peu pour moi."
+    },
+    {
+     "ko": "사람을 피하게 되다, 비사교적이 되다",
+     "ex": "À force de rester seul, il est devenu un peu sauvage.",
+     "t": "devenir sauvage"
+    }
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "family": "But + infinitif (même sujet)",
+   "note": "Quand le sujet de l'action principale et celui du but sont **les mêmes**, on utilise l'infinitif.",
+   "items": [
+    {
+     "form": "pour / afin de",
+     "mode": "+ infinitif",
+     "ko": "~하기 위해(서)",
+     "ex": "Je t'appelle **pour** te prévenir."
+    },
+    {
+     "form": "de manière à / de façon à",
+     "mode": "+ infinitif",
+     "ko": "~하도록",
+     "ex": "Il parle lentement **de manière à** être compris."
+    },
+    {
+     "form": "dans le but de / en vue de",
+     "mode": "+ infinitif",
+     "ko": "~할 목적으로 / ~을 목표로",
+     "ex": "Elle économise **en vue d'**acheter un appartement."
+    },
+    {
+     "form": "histoire de (familier)",
+     "mode": "+ infinitif",
+     "ko": "좀 ~하려고",
+     "ex": "On sort, **histoire de** prendre l'air."
+    }
+   ]
+  },
+  {
+   "family": "But + subjonctif (sujets différents)",
+   "note": "Quand les deux sujets sont **différents**, on utilise *que* + subjonctif.",
+   "items": [
+    {
+     "form": "pour que / afin que",
+     "mode": "+ subjonctif",
+     "ko": "~하도록, ~하게끔",
+     "ex": "Je répète **pour que** tu comprennes."
+    },
+    {
+     "form": "de sorte que / de manière (à ce) que",
+     "mode": "+ subjonctif",
+     "ko": "~하도록",
+     "ex": "Range la salle **de sorte que** tout le monde puisse s'asseoir."
+    },
+    {
+     "form": "faire en sorte que",
+     "mode": "+ subjonctif",
+     "ko": "~하도록 (조치)하다",
+     "ex": "**Faites en sorte que** le dossier soit prêt."
+    },
+    {
+     "form": "histoire que (familier) / impératif + que",
+     "mode": "+ subjonctif",
+     "ko": "~하게 좀",
+     "ex": "Parle moins fort, **que** le bébé dorme."
+    }
+   ]
+  },
+  {
+   "family": "But négatif et crainte",
+   "note": "Après *de peur que / de crainte que*, on ajoute souvent un **ne explétif** (sans valeur négative) en registre soutenu.",
+   "items": [
+    {
+     "form": "pour ne pas / afin de ne pas",
+     "mode": "+ infinitif",
+     "ko": "~하지 않기 위해",
+     "ex": "Je pars tôt **pour ne pas** rater le train."
+    },
+    {
+     "form": "de peur de / de crainte de",
+     "mode": "+ infinitif",
+     "ko": "~할까 봐",
+     "ex": "Il se tait **de peur de** dire une bêtise."
+    },
+    {
+     "form": "de peur que / de crainte que (+ ne)",
+     "mode": "+ subjonctif",
+     "ko": "~할까 봐 (주어가 다를 때)",
+     "ex": "Je prends un parapluie **de peur qu'**il ne pleuve."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "재택근무 / 재택근무하다",
+   "ex": "Je télétravaille le mercredi.",
+   "t": "le télétravail / télétravailler"
+  },
+  {
+   "ko": "이동, 통근길",
+   "ex": "Mon trajet dure quarante minutes.",
+   "t": "un trajet"
+  },
+  {
+   "ko": "공유 오피스",
+   "ex": "Elle loue un bureau dans un espace de coworking.",
+   "t": "un espace de coworking"
+  },
+  {
+   "ko": "경영진 회의",
+   "ex": "Le projet sera validé en comité de direction.",
+   "t": "le comité de direction"
+  }
+ ],
+ "register": [
+  {
+   "formal": "travailler",
+   "casual": "bosser"
+  },
+  {
+   "formal": "Ne vous inquiétez pas.",
+   "casual": "T'inquiète."
+  },
+  {
+   "formal": "afin de / afin que",
+   "casual": "histoire de / histoire que"
+  },
+  {
+   "formal": "Je crains que…",
+   "casual": "J'ai peur que…"
+  },
+  {
+   "formal": "Fermez la porte afin que je puisse…",
+   "casual": "Ferme la porte, que je puisse…"
+  }
+ ],
+ "pitfalls": [
+  {
+   "title": "Infinitif ou subjonctif ? Tout dépend du sujet",
+   "explain": "En coréen, ~하기 위해 / ~하도록 ne change pas selon le sujet. En français, si le sujet est le même, on **doit** utiliser l'infinitif.",
+   "ko": "주어가 같으면 → 부정사 / 주어가 다르면 → que + 접속법",
+   "wrong": "Je parle lentement pour que je sois compris.",
+   "right": "Je parle lentement pour être compris."
+  },
+  {
+   "title": "Le *ne* explétif n'est pas une négation",
+   "explain": "Dans « de peur qu'il **ne** pleuve », *ne* n'a aucun sens négatif : la personne a peur qu'il pleuve. Il est facultatif à l'oral.",
+   "ko": "여기서 ne는 부정이 아님: « 비가 올까 봐 »",
+   "wrong": "de peur qu'il ne pleuve = « 비가 안 올까 봐 »",
+   "right": "de peur qu'il ne pleuve = « 비가 올까 봐 »"
+  },
+  {
+   "title": "*De sorte que* : but ou conséquence ?",
+   "explain": "Avec le **subjonctif**, *de sorte que* exprime le but (on veut un résultat). Avec l'**indicatif**, il exprime une conséquence (le résultat est réel).",
+   "ko": "접속법 → 목적 (~하도록) / 직설법 → 결과 (그래서 ~했다)",
+   "wrong": "But : Il parle fort de sorte que tout le monde l'entend.",
+   "right": "But : Il parle fort de sorte que tout le monde l'**entende**. (Conséquence : Il a parlé fort, de sorte que tout le monde l'**a entendu**.)"
+  },
+  {
+   "title": "*Histoire de* : seulement à l'oral",
+   "explain": "Très courant à l'oral, mais à éviter dans un texte formel (lettre, DELF/DALF écrit). Préférez *afin de*.",
+   "ko": "구어 표현 — 격식 있는 글에서는 afin de 사용"
+  }
+ ],
+ "speaking": [
+  {
+   "q": "Pourquoi apprenez-vous le français ? Donnez trois buts différents (*pour, afin de, dans le but de*).",
+   "a": "J'apprends le français **pour** voyager en France, **afin de** lire des romans en version originale et **dans le but de** travailler un jour à Paris."
+  },
+  {
+   "q": "Que faites-vous **pour que** vos collègues ou amis se sentent bien avec vous ?",
+   "a": "J'organise souvent des déjeuners **pour que** tout le monde se parle, et j'écoute beaucoup **afin que** chacun se sente respecté."
+  },
+  {
+   "q": "Décrivez une précaution que vous prenez **de peur de** / **de peur que** quelque chose arrive.",
+   "a": "Je pars toujours tôt **de peur de** rater mon train. / Je garde un parapluie au bureau **de peur qu'il** (ne) pleuve."
+  }
+ ],
+ "exercises": [
+  {
+   "title": "Choisissez la bonne forme",
+   "instruction": "Même sujet ou sujets différents ? Choisissez.",
+   "type": "choice",
+   "items": [
+    {
+     "q": "Je t'appelle ___ te rappeler le rendez-vous.",
+     "options": [
+      "pour",
+      "pour que"
+     ],
+     "answers": [
+      "pour"
+     ],
+     "explain": "même sujet (je) → infinitif"
+    },
+    {
+     "q": "Parle plus fort ___ tout le monde t'entende.",
+     "options": [
+      "afin de",
+      "afin que"
+     ],
+     "answers": [
+      "afin que"
+     ],
+     "explain": "sujets différents (tu / tout le monde)"
+    },
+    {
+     "q": "Elle a pris un taxi de peur ___ en retard.",
+     "options": [
+      "d'être",
+      "qu'elle soit"
+     ],
+     "answers": [
+      "d'être"
+     ],
+     "explain": "même sujet (elle) → de peur de + infinitif"
+    },
+    {
+     "q": "Il a laissé la clé sous le paillasson de sorte que sa sœur ___ entrer.",
+     "options": [
+      "peut",
+      "puisse"
+     ],
+     "answers": [
+      "puisse"
+     ],
+     "explain": "but → subjonctif"
+    },
+    {
+     "q": "Je vais faire un tour, ___ prendre l'air.",
+     "options": [
+      "histoire de",
+      "histoire que"
+     ],
+     "answers": [
+      "histoire de"
+     ],
+     "explain": "même sujet → histoire de + infinitif"
+    }
+   ]
+  },
+  {
+   "title": "Conjuguez au subjonctif",
+   "instruction": "Écrivez le verbe entre parenthèses à la bonne forme.",
+   "type": "fill",
+   "items": [
+    {
+     "q": "Je t'envoie le plan pour que tu (trouver) ___ facilement la maison.",
+     "answers": [
+      "trouves"
+     ]
+    },
+    {
+     "q": "Le directeur fait en sorte que le projet (être) ___ prêt à temps.",
+     "answers": [
+      "soit"
+     ]
+    },
+    {
+     "q": "Nous partons tôt de peur qu'il n'y (avoir) ___ des bouchons.",
+     "answers": [
+      "ait"
+     ]
+    },
+    {
+     "q": "Ferme la fenêtre, que le bébé ne (prendre) ___ pas froid.",
+     "answers": [
+      "prenne"
+     ]
+    },
+    {
+     "q": "Elle a réorganisé la salle de manière à ce que chacun (pouvoir) ___ voir l'écran.",
+     "answers": [
+      "puisse"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dictée",
+   "instruction": "Écoutez la phrase et écrivez-la.",
+   "type": "dictation",
+   "items": [
+    {
+     "q": "Je t'appelle pour te prévenir."
+    },
+    {
+     "q": "Parle plus fort pour que tout le monde t'entende."
+    },
+    {
+     "q": "Il est parti tôt de peur de rater son train."
+    },
+    {
+     "q": "Faites en sorte que le dossier soit prêt."
+    }
+   ]
+  },
+  {
+   "title": "Reliez les deux phrases",
+   "instruction": "Reliez avec la structure proposée, puis comparez avec la correction.",
+   "type": "free",
+   "items": [
+    {
+     "q": "Je travaille de chez moi. Je veux éviter les embouteillages. (*afin de*)",
+     "answers": [
+      "Je travaille de chez moi afin d'éviter les embouteillages."
+     ]
+    },
+    {
+     "q": "Le manager organise une réunion. Les équipes doivent se rencontrer. (*pour que*)",
+     "answers": [
+      "Le manager organise une réunion pour que les équipes se rencontrent."
+     ]
+    },
+    {
+     "q": "Il n'ose pas parler en réunion. Il a peur de se tromper. (*de peur de*)",
+     "answers": [
+      "Il n'ose pas parler en réunion de peur de se tromper."
+     ]
+    },
+    {
+     "q": "J'ai éteint mon téléphone. Mon chef ne doit pas m'appeler. (*de crainte que*)",
+     "answers": [
+      "J'ai éteint mon téléphone de crainte que mon chef (ne) m'appelle."
+     ],
+     "explain": "*ne* explétif facultatif"
+    }
+   ]
+  }
+ ],
+ "audio_note": "Audio : voix du navigateur (aucun service audio disponible).",
+ "lang": "fr-FR",
+ "culture": {
+  "title": "Le télétravail en France",
+  "text": "Depuis 2020, beaucoup d'entreprises françaises proposent 2 ou 3 jours de télétravail par semaine. Le « droit à la déconnexion » protège aussi les salariés : en principe, on ne répond pas aux e-mails professionnels le soir ou le week-end."
+ }
+}

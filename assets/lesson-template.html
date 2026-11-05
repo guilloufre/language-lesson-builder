@@ -51,6 +51,8 @@ ol.q{margin:0;padding-left:22px}ol.q li{margin:6px 0}
 .src{font-size:.8rem;color:var(--mute);margin-top:8px}
 .kl{display:none;color:var(--mute);font-size:.9rem;margin-left:22px}.text.showko .kl,.kl.open{display:block}.tx.has{cursor:pointer}
 .miss{border-bottom:1px solid var(--line);padding:8px 0;text-align:left}
+.pq{font-size:1.05rem;margin:14px 0 10px}.lv{display:flex;gap:4px;align-items:center}.lv i{width:22px;height:4px;border-radius:2px;background:var(--line)}.lv i.on{background:var(--acc)}
+.pr-btn{display:flex;justify-content:center;margin-top:18px}
 mark{background:transparent;color:inherit;font-weight:650}.text mark{font-weight:inherit}
 .hl mark{background:var(--mark);border-radius:3px;padding:0 2px}
 table{width:100%;border-collapse:collapse;font-size:.92rem}
@@ -79,9 +81,9 @@ body:not(.paged) .foot{display:none}
 <script>
 const LESSON = /*__LESSON_JSON__*/null;
 const STR = {
- fr:{all:'Tout afficher',step:'Étape',of:'sur',next:'Suivant',prev:'Précédent',finish:'Terminer',bravo:'Bravo ! Leçon terminée.',again:'Recommencer',listen:'Écouter',stop:'Stop',speed:'Vitesse',dlg:'Dialogue',art:'Article',src:'Source',warm:"Avant d'écouter",warmA:'Avant de lire',l1:'1re écoute — compréhension globale',l1h:'Écoutez sans lire la transcription.',l2:'2e écoute — compréhension détaillée',l2h:'Réécoutez et répondez plus précisément.',rd:'Lecture — transcription et repérage',rdh:'Lisez la transcription et repérez les structures de la leçon.',a1:'1re lecture — compréhension globale',a1h:'Lisez (ou écoutez) le texte une première fois.',a2:'2e lecture — compréhension détaillée',a2h:'Relisez et répondez plus précisément.',a3:'Repérage — vocabulaire et structures',a3h:'Repérez les structures de la leçon dans le texte.',q:'Questions',ans:'Réponses',tr:'Transcription',hl:'Surligner les structures',expr:'Expressions',lesson:'La leçon',voc:'Vocabulaire',reg:'Registre',pit:'Points difficiles pour un apprenant coréen',spk:'Production orale',spkh:'Répondez à voix haute en réutilisant au moins une structure de la leçon.',ex:'Exercices',exn:'Exercice',chk:'Vérifier',cor:'Correction',exp:'Réponse attendue',ok:'Correct',score:'Score',ph:'Votre réponse…',say:'Écouter la prononciation',kot:'Traduction coréenne',line:'Réécouter cette phrase',cult:'Culture',review:'À revoir',noerr:'Aucune erreur, bravo !',retry:'Refaire mes erreurs',prac:'Pour un entraînement adaptatif, écrivez à Claude : « Entraînement adaptatif sur cette leçon ».',h:{struct:'Structure',form:'Construction',ko:'한국어',exm:'Exemple',expr:'Expression',word:'Mot',f:'Soutenu',c:'Familier'}},
- en:{all:'Show all',step:'Step',of:'of',next:'Next',prev:'Previous',finish:'Finish',bravo:'Well done! Lesson complete.',again:'Start again',listen:'Listen',stop:'Stop',speed:'Speed',dlg:'Dialogue',art:'Article',src:'Source',warm:'Before listening',warmA:'Before reading',l1:'1st listening — gist',l1h:'Listen without reading the transcript.',l2:'2nd listening — details',l2h:'Listen again and answer more precisely.',rd:'Reading — transcript and spotting',rdh:'Read the transcript and spot the lesson structures.',a1:'1st reading — gist',a1h:'Read (or listen to) the text once.',a2:'2nd reading — details',a2h:'Read again and answer more precisely.',a3:'Spotting — vocabulary and structures',a3h:'Find the lesson structures in the text.',q:'Questions',ans:'Answers',tr:'Transcript',hl:'Highlight structures',expr:'Expressions',lesson:'The lesson',voc:'Vocabulary',reg:'Register',pit:'Difficult points for Korean learners',spk:'Speaking',spkh:'Answer out loud, reusing at least one structure from the lesson.',ex:'Exercises',exn:'Exercise',chk:'Check',cor:'Answer',exp:'Expected',ok:'Correct',score:'Score',ph:'Your answer…',say:'Listen to pronunciation',kot:'Korean translation',line:'Replay this line',cult:'Culture',review:'To review',noerr:'No mistakes — well done!',retry:'Retry my mistakes',prac:'For adaptive practice, write to Claude: "Adaptive practice on this lesson".',h:{struct:'Structure',form:'Form',ko:'한국어',exm:'Example',expr:'Expression',word:'Word',f:'Formal',c:'Casual'}},
- ko:{all:'전체 보기',step:'단계',of:'/',next:'다음',prev:'이전',finish:'마치기',bravo:'수고했어요! 수업을 모두 마쳤어요.',again:'처음부터',listen:'듣기',stop:'정지',speed:'속도',dlg:'대화',art:'기사',src:'출처',warm:'듣기 전에',warmA:'읽기 전에',l1:'첫 번째 듣기 — 전체 이해',l1h:'대본을 보지 말고 들어 보세요.',l2:'두 번째 듣기 — 세부 내용',l2h:'다시 듣고 더 자세히 답해 보세요.',rd:'읽기 — 대본과 표현 찾기',rdh:'대본을 읽고 핵심 표현을 찾아보세요.',a1:'첫 번째 읽기 — 전체 이해',a1h:'글을 한 번 읽어 보세요 (들어도 돼요).',a2:'두 번째 읽기 — 세부 내용',a2h:'다시 읽고 더 자세히 답해 보세요.',a3:'표현 찾기 — 어휘와 문법',a3h:'글에서 핵심 표현을 찾아보세요.',q:'질문',ans:'정답',tr:'대본',hl:'핵심 표현 표시',expr:'표현',lesson:'문법과 어휘',voc:'어휘',reg:'말투: 격식 ↔ 친근',pit:'한국인 학습자가 자주 틀리는 점',spk:'말하기 연습',spkh:'이번 과의 표현을 하나 이상 써서 소리 내어 대답해 보세요.',ex:'연습 문제',exn:'연습',chk:'확인',cor:'정답',exp:'정답',ok:'정답이에요',score:'점수',ph:'답을 써 보세요…',say:'발음 듣기',kot:'한국어 번역',line:'이 문장 다시 듣기',cult:'문화 노트',review:'다시 볼 문제',noerr:'틀린 문제가 없어요!',retry:'틀린 문제 다시 풀기',prac:'한 문제씩 바로 피드백을 받고 싶다면 Claude에게 « 이 수업으로 맞춤 연습 »이라고 써 보세요.',h:{struct:'표현',form:'형태',ko:'뜻',exm:'예문',expr:'표현',word:'단어',f:'격식',c:'친근'}}
+ fr:{all:'Tout afficher',step:'Étape',of:'sur',next:'Suivant',prev:'Précédent',finish:'Terminer',bravo:'Bravo ! Leçon terminée.',again:'Recommencer',listen:'Écouter',stop:'Stop',speed:'Vitesse',dlg:'Dialogue',art:'Article',src:'Source',warm:"Avant d'écouter",warmA:'Avant de lire',l1:'1re écoute — compréhension globale',l1h:'Écoutez sans lire la transcription.',l2:'2e écoute — compréhension détaillée',l2h:'Réécoutez et répondez plus précisément.',rd:'Lecture — transcription et repérage',rdh:'Lisez la transcription et repérez les structures de la leçon.',a1:'1re lecture — compréhension globale',a1h:'Lisez (ou écoutez) le texte une première fois.',a2:'2e lecture — compréhension détaillée',a2h:'Relisez et répondez plus précisément.',a3:'Repérage — vocabulaire et structures',a3h:'Repérez les structures de la leçon dans le texte.',q:'Questions',ans:'Réponses',tr:'Transcription',hl:'Surligner les structures',expr:'Expressions',lesson:'La leçon',voc:'Vocabulaire',reg:'Registre',pit:'Points difficiles pour un apprenant coréen',spk:'Production orale',spkh:'Répondez à voix haute en réutilisant au moins une structure de la leçon.',ex:'Exercices',exn:'Exercice',chk:'Vérifier',cor:'Correction',exp:'Réponse attendue',ok:'Correct',score:'Score',ph:'Votre réponse…',say:'Écouter la prononciation',kot:'Traduction coréenne',line:'Réécouter cette phrase',cult:'Culture',review:'À revoir',noerr:'Aucune erreur, bravo !',retry:'Refaire mes erreurs',pracBtn:'🎯 Entraînement adaptatif',pracHint:'Des questions générées une à une selon vos réponses.',lvl:'Niveau',think:'Claude prépare la question…',back:'Retour à la leçon',sum:'Bilan',mast:'Acquis',rev:'À revoir',learn:'À mémoriser',copy:'Copier le bilan',copied:'Copié ✓',fbCopy:'Copier la demande',fbHint:'Collez-la dans la conversation Claude où cette leçon a été créée.',err:'Claude n\'est pas disponible pour le moment. Réessayez plus tard.',more:'Nouvel entraînement',h:{struct:'Structure',form:'Construction',ko:'한국어',exm:'Exemple',expr:'Expression',word:'Mot',f:'Soutenu',c:'Familier'}},
+ en:{all:'Show all',step:'Step',of:'of',next:'Next',prev:'Previous',finish:'Finish',bravo:'Well done! Lesson complete.',again:'Start again',listen:'Listen',stop:'Stop',speed:'Speed',dlg:'Dialogue',art:'Article',src:'Source',warm:'Before listening',warmA:'Before reading',l1:'1st listening — gist',l1h:'Listen without reading the transcript.',l2:'2nd listening — details',l2h:'Listen again and answer more precisely.',rd:'Reading — transcript and spotting',rdh:'Read the transcript and spot the lesson structures.',a1:'1st reading — gist',a1h:'Read (or listen to) the text once.',a2:'2nd reading — details',a2h:'Read again and answer more precisely.',a3:'Spotting — vocabulary and structures',a3h:'Find the lesson structures in the text.',q:'Questions',ans:'Answers',tr:'Transcript',hl:'Highlight structures',expr:'Expressions',lesson:'The lesson',voc:'Vocabulary',reg:'Register',pit:'Difficult points for Korean learners',spk:'Speaking',spkh:'Answer out loud, reusing at least one structure from the lesson.',ex:'Exercises',exn:'Exercise',chk:'Check',cor:'Answer',exp:'Expected',ok:'Correct',score:'Score',ph:'Your answer…',say:'Listen to pronunciation',kot:'Korean translation',line:'Replay this line',cult:'Culture',review:'To review',noerr:'No mistakes — well done!',retry:'Retry my mistakes',pracBtn:'🎯 Adaptive practice',pracHint:'Questions generated one by one from your answers.',lvl:'Level',think:'Claude is preparing the question…',back:'Back to the lesson',sum:'Summary',mast:'Mastered',rev:'To review',learn:'To memorise',copy:'Copy summary',copied:'Copied ✓',fbCopy:'Copy the request',fbHint:'Paste it into the Claude conversation where this lesson was created.',err:'Claude is not available right now. Try again later.',more:'New practice',h:{struct:'Structure',form:'Form',ko:'한국어',exm:'Example',expr:'Expression',word:'Word',f:'Formal',c:'Casual'}},
+ ko:{all:'전체 보기',step:'단계',of:'/',next:'다음',prev:'이전',finish:'마치기',bravo:'수고했어요! 수업을 모두 마쳤어요.',again:'처음부터',listen:'듣기',stop:'정지',speed:'속도',dlg:'대화',art:'기사',src:'출처',warm:'듣기 전에',warmA:'읽기 전에',l1:'첫 번째 듣기 — 전체 이해',l1h:'대본을 보지 말고 들어 보세요.',l2:'두 번째 듣기 — 세부 내용',l2h:'다시 듣고 더 자세히 답해 보세요.',rd:'읽기 — 대본과 표현 찾기',rdh:'대본을 읽고 핵심 표현을 찾아보세요.',a1:'첫 번째 읽기 — 전체 이해',a1h:'글을 한 번 읽어 보세요 (들어도 돼요).',a2:'두 번째 읽기 — 세부 내용',a2h:'다시 읽고 더 자세히 답해 보세요.',a3:'표현 찾기 — 어휘와 문법',a3h:'글에서 핵심 표현을 찾아보세요.',q:'질문',ans:'정답',tr:'대본',hl:'핵심 표현 표시',expr:'표현',lesson:'문법과 어휘',voc:'어휘',reg:'말투: 격식 ↔ 친근',pit:'한국인 학습자가 자주 틀리는 점',spk:'말하기 연습',spkh:'이번 과의 표현을 하나 이상 써서 소리 내어 대답해 보세요.',ex:'연습 문제',exn:'연습',chk:'확인',cor:'정답',exp:'정답',ok:'정답이에요',score:'점수',ph:'답을 써 보세요…',say:'발음 듣기',kot:'한국어 번역',line:'이 문장 다시 듣기',cult:'문화 노트',review:'다시 볼 문제',noerr:'틀린 문제가 없어요!',retry:'틀린 문제 다시 풀기',pracBtn:'🎯 맞춤 연습',pracHint:'답에 따라 한 문제씩 새로 만들어져요.',lvl:'레벨',think:'Claude가 문제를 준비하고 있어요…',back:'수업으로 돌아가기',sum:'결과',mast:'잘한 것',rev:'다시 볼 것',learn:'외워 둘 문장',copy:'결과 복사',copied:'복사됨 ✓',fbCopy:'요청 문장 복사',fbHint:'이 수업을 만든 Claude 대화창에 붙여 넣으세요.',err:'지금은 Claude를 사용할 수 없어요. 나중에 다시 해 보세요.',more:'새 연습',h:{struct:'표현',form:'형태',ko:'뜻',exm:'예문',expr:'표현',word:'단어',f:'격식',c:'친근'}}
 };
 const L = LESSON || {title:'—',level:'',dialogs:[]};
 const LANG = L.lang || 'fr-FR', LP = LANG.slice(0, 2).toLowerCase();
@@ -166,30 +168,82 @@ add(S.lesson, S.lesson, null, ...(L.grammar || []).map(g => block(null, null, $(
   L.culture ? block(S.cult, null, L.culture.title ? $('h3', { html: fmt(L.culture.title) }) : null, $('p', { style: 'margin:0', html: fmt(L.culture.text) })) : null);
 add(S.pit, S.pit, null, ...(L.pitfalls || []).map(p => block(null, null, $('h3', { html: fmt(p.title) }), $('p', { html: fmt(p.explain), style: 'margin:0 0 4px' }), p.ko ? $('p', { class: 'ko', style: 'margin:0 0 4px', html: fmt(p.ko) }) : null, p.wrong ? $('p', { style: 'margin:0' }, $('span', { class: 'wrong', html: fmt(p.wrong) }), '  →  ', $('span', { class: 'right', html: fmt(p.right) })) : null)));
 add(S.spk, S.spk, S.spkh, questions((L.speaking || []).map(s => typeof s === 'string' ? { q: s } : s), null));
-add(S.ex, S.ex, null, ...(L.exercises || []).map((e, i) => exercise(e, i + 1)), block(null, null, scoreEl, $('p', { class: 'note' }, S.prac)));
+add(S.ex, S.ex, null, ...(L.exercises || []).map((e, i) => exercise(e, i + 1)), block(null, null, scoreEl), $('div', { class: 'pr-btn' }, $('button', { onclick: () => startPractice() }, S.pracBtn)));
 /* ---- render & navigation ---- */
 const KEY = 'lesson:' + L.title; let st = { cur: 0, max: 0, fin: false };
 try { st = Object.assign(st, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify({ cur: st.cur, max: st.max, fin: st.fin })); } catch (e) {} };
 const N = STEPS.length, main = document.getElementById('steps'); if (st.cur >= N) st.cur = 0;
 STEPS.forEach((s, i) => {
   const foot = $('div', { class: 'foot' }, i ? ib('left', S.prev, () => go(i - 1)) : $('span'), $('span', { class: 'note' }, `${i + 1} ${S.of} ${N}`), $('button', { class: 'primary', onclick: () => i < N - 1 ? go(i + 1, true) : finish() }, i < N - 1 ? S.next + ' →' : S.finish + ' ✓'));
   s.sec = $('section', { class: 'step', id: 'step-' + (i + 1) }, s.kicker !== s.title ? $('div', { class: 'kicker' }, s.kicker) : null, $('h2', {}, s.title), s.el, foot); main.append(s.sec);
 });
 const doneSec = $('section', { class: 'step done-msg' }); main.append(doneSec);
+/* ---- adaptive practice (asks Claude through the page's `sample` capability; fallback: copy the request) ---- */
+const pracSec = $('section', { class: 'step' }); main.append(pracSec);
+const LNAME = (() => { try { return new Intl.DisplayNames(['en'], { type: 'language' }).of(LP); } catch (e) { return LANG; } })();
+const STRUCTS = (L.grammar || []).flatMap(g => g.items.map(x => plain(x.form))).join('; ');
+let P = null, SAMPLE;
+const missText = () => [...MISS.values()].map(m => plain(m.q) + ' → ' + m.ans.map(plain).join(' / ')).join(' | ') || 'none';
+const copyBtn = (label, text) => { const b = $('button', { onclick: async () => { try { await navigator.clipboard.writeText(text); b.textContent = S.copied; } catch (e) { b.textContent = '✗'; } } }, label); return b; };
+function pracShell(...kids) { pracSec.innerHTML = ''; pracSec.append($('div', { class: 'kicker' }, S.pracBtn.replace(/^\S+\s/, '')), ...kids, $('div', { class: 'foot' }, $('button', { onclick: () => { st.prac = false; P = null; stopAll(); update(); } }, '← ' + S.back), P ? $('span', { class: 'note' }, `${Math.min(P.n + 1, 10)} / 10`) : $('span'))); }
+async function startPractice() {
+  st.prac = true; st.fin = false; update(); window.scrollTo(0, 0);
+  if (SAMPLE === undefined) { try { SAMPLE = window.claude ? await window.claude.use('sample') : null; } catch (e) { SAMPLE = null; } }
+  if (!SAMPLE) {
+    const req = `Entraînement adaptatif / adaptive practice — « ${L.title} » (${LNAME}, ${L.level}). Structures: ${STRUCTS}. To review: ${missText()}`;
+    return pracShell($('p', { class: 'pq' }, S.fbHint), $('p', { class: 'note', style: 'background:var(--bg);padding:10px;border-radius:10px' }, req), $('div', { class: 'row' }, copyBtn(S.fbCopy, req)));
+  }
+  P = { lvl: 1, ok: 0, no: 0, n: 0, hist: [] }; nextItem(null, null);
+}
+const sys = () => `You run adaptive practice for a Korean-speaking learner of ${LNAME} (CEFR ${L.level}). Lesson: "${L.title}". Target structures: ${STRUCTS}. Items the learner missed in the lesson: ${missText()}.
+Levels: 1 = recognition (multiple choice, 3 options), 2 = form (multiple choice, 3 options), 3 = transformation (typed sentence), 4 = free personal sentence with a given structure (typed).
+Write the item prompt in ${UI === 'ko' ? 'Korean, with the sentences in ' + LNAME : LNAME}. Feedback: one short line in ${UI === 'ko' ? 'Korean' : LNAME} plus one short line in Korean. Never repeat an earlier item. Return JSON only.`;
+async function nextItem(item, answer) {
+  pracShell($('p', { class: 'pq note' }, S.think));
+  const graded = item && item.type === 'choice' ? { correct: answer === item.answer, explain: item.explain, ko: item.ko, model: item.answer } : null;
+  const ask = `${sys()}
+Earlier items: ${JSON.stringify(P.hist.map(h => h.prompt))}
+${item && item.type === 'text' ? `Grade the learner's answer. Item: ${JSON.stringify(item.prompt)}. Expected or model: ${JSON.stringify(item.answer)}. Learner's answer: ${JSON.stringify(answer)}. Accept any correct alternative.` : ''}
+Then write the next item at level ${P.lvl}.
+JSON shape: {"feedback": ${item && item.type === 'text' ? '{"correct": true|false, "explain": "...", "ko": "...", "model": "a correct answer"}' : 'null'}, "next": {"type": "choice"|"text", "prompt": "...", "options": ["..."] (choice only), "answer": "the correct option or a model answer", "explain": "why (target language)", "ko": "why (Korean)"}}`;
+  let r; try { r = await SAMPLE.json(ask, { modelTier: 'default' }); } catch (e) { return pracShell($('p', { class: 'fb no', style: 'display:block' }, S.err)); }
+  const fb = graded || (r && r.feedback);
+  if (item && fb) { P.hist.push({ prompt: item.prompt, answer, correct: !!fb.correct }); P.n++; if (fb.correct) { P.ok++; P.no = 0; if (P.ok >= 2) { P.lvl = Math.min(4, P.lvl + 1); P.ok = 0; } } else { P.no++; P.ok = 0; if (P.no >= 2) { P.lvl = Math.max(1, P.lvl - 1); P.no = 0; } } }
+  if (P.n >= 10) return summary(fb);
+  showItem(r && r.next, fb);
+}
+function showItem(it, fb) {
+  if (!it || !it.prompt) return pracShell($('p', { class: 'fb no', style: 'display:block' }, S.err));
+  const lv = $('div', { class: 'lv' }, $('span', { class: 'label', style: 'margin-right:6px' }, S.lvl), ...[1, 2, 3, 4].map(k => $('i', { class: k <= P.lvl ? 'on' : '' })));
+  const last = fb ? $('div', { class: 'fb ' + (fb.correct ? 'ok' : 'no'), style: 'display:block' }, $('span', { html: (fb.correct ? '✓ ' : '✗ ') + fmt(fb.explain || '') + (fb.model && !fb.correct ? ' → <b>' + fmt(fb.model) + '</b>' : '') }), fb.ko ? $('div', { class: 'ko' }, fb.ko) : null) : null;
+  let body;
+  if (it.type === 'choice' && Array.isArray(it.options)) body = $('div', { class: 'row' }, it.options.map(o => $('button', { onclick: () => nextItem(it, o) }, o)));
+  else { const inp = $('input', { type: 'text', style: 'flex:1;font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)', onkeydown: e => e.key === 'Enter' && inp.value.trim() && nextItem(it, inp.value) }); body = $('div', { class: 'row' }, inp, ib('check', S.chk, () => inp.value.trim() && nextItem(it, inp.value))); }
+  pracShell(lv, last, $('p', { class: 'pq', html: fmt(it.prompt) }), body);
+}
+async function summary(fb) {
+  pracShell($('p', { class: 'pq note' }, S.think));
+  let r = null; try { r = await SAMPLE.json(`${sys()}\nPractice results: ${JSON.stringify(P.hist)}\nSummarise in ${UI === 'ko' ? 'Korean' : LNAME}. JSON only: {"mastered": ["structure"], "review": ["structure"], "sentences": ["3 model sentences in ${LNAME} to memorise"]}`, { modelTier: 'default' }); } catch (e) {}
+  const ok = P.hist.filter(h => h.correct).length, d = new Date().toISOString().slice(0, 10);
+  const log = `Lesson log: ${d} · ${LNAME} · practice · ${L.title} · ${ok}/${P.hist.length} · to review: ${(r && r.review || []).join(', ') || '—'}`;
+  const list = (t, a) => a && a.length ? block(t, null, $('ul', { style: 'margin:0' }, a.map(x => $('li', { html: fmt(x) })))) : null;
+  P.n = 10; pracShell(fb ? $('div', { class: 'fb ' + (fb.correct ? 'ok' : 'no'), style: 'display:block' }, (fb.correct ? '✓ ' : '✗ ') + (fb.explain || '')) : null, $('h2', {}, `${S.sum} · ${ok}/${P.hist.length}`), r ? list(S.mast, r.mastered) : null, r ? list(S.rev, r.review) : null, r ? list(S.learn, r.sentences) : null, $('div', { class: 'row', style: 'margin-top:16px' }, copyBtn(S.copy, [S.sum + ' ' + ok + '/' + P.hist.length, ...(r ? [S.rev + ': ' + (r.review || []).join(', '), ...(r.sentences || [])] : []), log].join('\n')), $('button', { onclick: () => { P = { lvl: 1, ok: 0, no: 0, n: 0, hist: [] }; nextItem(null, null); } }, S.more)));
+}
 function renderDone() {
   doneSec.innerHTML = ''; const miss = [...MISS.values()];
   doneSec.append($('h2', {}, '🎉 ' + S.bravo), SC.n ? $('p', { class: 'label' }, `${S.score} ${SC.ok}/${SC.n}`) : null,
     miss.length ? block(S.review, null, ...miss.map(m => $('div', { class: 'miss' }, $('div', { html: fmt(m.q) }), $('div', { class: 'right', html: '→ ' + m.ans.map(fmt).join(' / ') + m.why })))) : $('p', {}, S.noerr),
     $('div', { class: 'row', style: 'justify-content:center;margin-top:18px' }, miss.length ? $('button', { class: 'primary', onclick: () => { miss.forEach(m => m.reset()); st.fin = false; go(N - 1); } }, S.retry) : null, $('button', { onclick: () => { st.fin = false; go(0); } }, S.again)),
-    $('p', { class: 'note' }, S.prac));
+    $('div', { class: 'pr-btn' }, $('button', { onclick: () => startPractice() }, S.pracBtn)));
 }
 function finish() { st.fin = true; st.max = N; save(); stopAll(); renderDone(); update(); window.scrollTo(0, 0); }
-function go(i, completed) { if (completed) st.max = Math.max(st.max, i); st.cur = i; st.fin = false; save(); stopAll(); update(); if (STEPS[i].onEnter) STEPS[i].onEnter(); window.scrollTo(0, 0); }
+function go(i, completed) { st.prac = false; if (completed) st.max = Math.max(st.max, i); st.cur = i; st.fin = false; save(); stopAll(); update(); if (STEPS[i].onEnter) STEPS[i].onEnter(); window.scrollTo(0, 0); }
 function update() {
   const all = document.getElementById('all').checked; document.body.classList.toggle('paged', !all);
   document.getElementById('hero').style.display = !all && (st.cur > 0 || st.fin) ? 'none' : '';
-  STEPS.forEach((s, i) => s.sec.classList.toggle('active', !st.fin && i === st.cur)); doneSec.classList.toggle('active', st.fin); doneSec.style.display = all ? 'none' : '';
+  const pr = !!st.prac; document.body.classList.toggle('paged', !all || pr);
+  STEPS.forEach((s, i) => s.sec.classList.toggle('active', !pr && !st.fin && i === st.cur)); doneSec.classList.toggle('active', !pr && st.fin); doneSec.style.display = all && !pr ? 'none' : ''; pracSec.classList.toggle('active', pr);
   const segs = document.getElementById('segs'); segs.innerHTML = '';
   STEPS.forEach((s, i) => { const reach = i <= st.max; const b = $('button', { class: 'seg' + (i < st.max || st.fin ? ' done' : '') + (!st.fin && i === st.cur && !all ? ' cur' : '') + (reach ? ' nav' : ''), title: `${S.step} ${i + 1} — ${s.kicker} · ${s.title}`, 'aria-label': `${S.step} ${i + 1}` }); if (reach) b.onclick = () => all ? s.sec.scrollIntoView({ behavior: 'smooth' }) : go(i); segs.append(b); });
 }

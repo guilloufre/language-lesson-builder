@@ -75,8 +75,8 @@ Fill `source` (name, url, licence, date, `adapted`). A1–A2 → always a simpli
 | 3 | ElevenLabs → edge-tts → browser voices | dialog audio (fallback chain below) |
 | 3 | ffmpeg | join audio clips (`scripts/tts_edge.py`) |
 | 4 | Python + `build.py` (`scripts/build.py`) | fill the template, mechanical checks |
-| 6 | Artifact tool (`publish_files` / `publish_version`) | publish the page; without it, send `index.html` as a file |
-| 7 | AskUserQuestion | adaptive practice; without it, plain text, one item at a time |
+| 6 | Artifact tool (`publish_files` / `publish_version`, then `declare_capabilities`) | publish the page and give it the `sample` capability so its practice can ask Claude; without the tool, send `index.html` as a file |
+| 7 | AskUserQuestion | adaptive practice in chat, only when the page can't run it; without it, plain text, one item at a time |
 
 - **Audio — try in this order, stop at the first that works:**
   1. **ElevenLabs** (if a text-to-speech tool from ElevenLabs is available): one female and one male voice in the target language, one clip per line, joined with `scripts/tts_edge.py` (join step).
@@ -98,23 +98,24 @@ Fill `source` (name, url, licence, date, `adapted`). A1–A2 → always a simpli
 3. **Audio**: follow the order in §4; save `d1.mp3`, `d2.mp3` if produced.
 4. **Build and check**: run `python3 <skill>/scripts/build.py lesson.json <skill>/assets/lesson-template.html index.html [d1.mp3 d2.mp3]`. Fix every failure.
 5. **Self-evaluate** with §2; revise until it passes.
-6. **Deliver**: publish `index.html` as an artifact (title = lesson title) and reply with the template below.
-7. **Practice** (optional): run §6 if the user accepts.
+6. **Deliver**: publish `index.html` as an artifact (title = lesson title), then `declare_capabilities` with `{"sample": {}}` (new page: publish first, then declare), and reply with the template below.
+7. **Practice**: runs inside the page (§6). Run it in chat only if the user asks here or the page can't reach Claude.
 
-**Output template — the page** (fixed by `assets/lesson-template.html`, minimal by design). Sticky header: title, "show all" switch (all steps at once, for review and printing), thin progress bar with one clickable segment per reached step. One step at a time; "Next →" unlocks the next; progress is remembered in the browser. Controls are icons with tooltips (▶ ■ speed, transcript, highlight, show answers, ✓ check); every expression, vocabulary word and example has a 🔊 pronunciation button; in transcripts each line has 🔊 for shadowing, tapping a line shows its Korean, and 가 shows all translations; choice exercises are graded on click; the end screen shows the score and every missed item with its correction, plus "retry my mistakes". 10 steps for dialogs (7 for an article): title + level/topic tags → objectives (3) → Dialogue 1 [1st listening · 2nd listening · reading with hidden transcript · expressions] → Dialogue 2 [same] → Lesson [grammar families · vocabulary · register · culture] → Pitfalls for Korean learners (3–4) → Speaking (3, model answers behind 👁) → Exercises (choice · fill · dictation · free, score) → end screen with mistakes review.
+**Output template — the page** (fixed by `assets/lesson-template.html`, minimal by design). Sticky header: title, "show all" switch (all steps at once, for review and printing), thin progress bar with one clickable segment per reached step. One step at a time; "Next →" unlocks the next; progress is remembered in the browser. Controls are icons with tooltips (▶ ■ speed, transcript, highlight, show answers, ✓ check); every expression, vocabulary word and example has a 🔊 pronunciation button; in transcripts each line has 🔊 for shadowing, tapping a line shows its Korean, and 가 shows all translations; choice exercises are graded on click; the end screen shows the score and every missed item with its correction, plus "retry my mistakes"; a 🎯 adaptive-practice button (end of exercises and end screen) runs §6 inside the page. 10 steps for dialogs (7 for an article): title + level/topic tags → objectives (3) → Dialogue 1 [1st listening · 2nd listening · reading with hidden transcript · expressions] → Dialogue 2 [same] → Lesson [grammar families · vocabulary · register · culture] → Pitfalls for Korean learners (3–4) → Speaking (3, model answers behind 👁) → Exercises (choice · fill · dictation · free, score) → end screen with mistakes review.
 
 **Output template — the chat reply** (5 lines, in the user's language):
 ```
 **<title>** — <language> · <level> · <grammar point> · <theme>
 Structures: <list>
 Audio: <ElevenLabs | edge-tts | browser voices> · Self-check: <avg>/10
-Want adaptive practice, one question at a time?
+Adaptive practice: 🎯 button at the end of the page.
 Lesson log: <date> · <language> · <level> · <topic> · <structures>
 ```
-The *Lesson log* line is what future lessons search for (§3 History); after adaptive practice, end with `Lesson log: <date> · <language> · practice · to review: <structures>`.
+The *Lesson log* line is what future lessons search for (§3 History). The page's practice summary has a "copy summary" button whose text ends with a practice Lesson log line; the learner can paste it into the chat. After practice in chat, end with `Lesson log: <date> · <language> · practice · to review: <structures>`.
 
 ## 6. Adaptive practice mode
-Starts when the user accepts the offer or writes "practice" / "entraînement" / "연습" after a lesson.
+**In the page** (default): the template's 🎯 button asks Claude through the page's `sample` capability, one call per item: it grades typed answers, writes the next item, then a final summary — 10 items, levels and rules below, already built into the template (don't edit it). Opened as a plain file or without the capability, the button shows the request to copy into the chat instead.
+**In chat** (fallback): when the user writes "practice" / "entraînement" / "연습" here.
 - One item per question with AskUserQuestion: 2–4 options for levels 1–2; for levels 3–4 ask for a typed answer (the free-text "Other" field).
 - Levels: **1** recognition (choose the structure) → **2** form (choose or type the right form) → **3** transformation (join two sentences) → **4** free production (a personal sentence with a given structure).
 - After each answer: ✓ or ✗ with a one-line rule (target language + Korean), then the next item.

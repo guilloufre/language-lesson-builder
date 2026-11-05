@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-"""Fill the lesson template and run the mechanical checks.
-Usage: python3 build.py lesson.json lesson-template.html index.html [d1.mp3 d2.mp3]"""
 import base64, json, re, sys
 lesson, tpl, out, *audio = sys.argv[1:]
 L = json.load(open(lesson, encoding="utf-8")); err = []
@@ -14,8 +11,8 @@ lo, hi = R.get(L.get("level"), (50, 500))
 if art:
     src = L["dialogs"][0].get("source") or {}
     if not src.get("url") or not src.get("license"): err.append("article: source.url and source.license are required")
-if str(L.get("level", "")).startswith(("B", "C")) and L.get("lang", "fr")[:2] not in ("fr", "en") and not L.get("ui_strings"):
-    err.append("B1+ lesson in this language needs ui_strings (all keys of STR.fr)")
+ui = L.get("ui_lang") or (L.get("l1", "ko") if str(L.get("level", "")).startswith("A") else L.get("lang", "fr")[:2])
+if ui.lower()[:2] not in ("fr", "en", "ko") and not L.get("ui_strings"): err.append(f"interface language '{ui}' needs ui_strings (all keys of STR.fr)")
 min_marks = 3 if str(L.get("level", "")).startswith("A") else 4
 for i, d in enumerate(L.get("dialogs", [])):
     txt = " ".join(l["t"] for l in d["lines"]).replace("*", "")
@@ -24,7 +21,7 @@ for i, d in enumerate(L.get("dialogs", [])):
     print(f"text {i+1}: {w} words, {m} marked structures")
     if not lo <= w <= hi: err.append(f"text {i+1}: {w} words, target {lo}-{hi}")
     if m < min_marks: err.append(f"text {i+1}: {m} marked structures, min {min_marks}")
-    if not all(l.get("ko") for l in d["lines"]): err.append(f"text {i+1}: every line needs a Korean translation 'ko'")
+    if not all(l.get("l1") or l.get("ko") for l in d["lines"]): err.append(f"text {i+1}: every line needs a translation 'l1'")
     for q in ["q1", "q2", "reading"]:
         if not d.get(q) or not all(x.get("a") for x in d[q]): err.append(f"text {i+1}: {q} empty or missing answers")
     if i < len(audio):

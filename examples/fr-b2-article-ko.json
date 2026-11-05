@@ -1,0 +1,448 @@
+{
+ "title": "L'IA sans électricité — opposition et concession",
+ "level": "B2",
+ "lang": "fr-FR",
+ "l1": "ko",
+ "type": "article",
+ "topic": "L'IA en Afrique subsaharienne",
+ "grammar_point": "Opposition et concession",
+ "objectives": [
+  "Comprendre un article d'actualité sur l'accès à l'IA en Afrique subsaharienne",
+  "Opposer deux faits : *alors que, tandis que, si…*",
+  "Exprimer une concession : *pourtant, malgré, en dépit de, bien que, même si*"
+ ],
+ "dialogs": [
+  {
+   "kind": "article",
+   "title": "Quand le manque d'électricité freine l'IA",
+   "context": "Article de Global Voices, adapté pour le niveau B2.",
+   "source": {
+    "name": "Jean Sovon, Global Voices (20/04/2026)",
+    "url": "https://fr.globalvoices.org/2026/04/20/301284/",
+    "license": "CC BY 3.0",
+    "adapted": "extraits raccourcis et simplifiés"
+   },
+   "speakers": [
+    {
+     "name": "",
+     "gender": "f"
+    }
+   ],
+   "lines": [
+    {
+     "s": 0,
+     "t": "Dans la course mondiale à l'intelligence artificielle, une réalité très concrète frappe une grande partie de l'Afrique subsaharienne : comment alimenter un ordinateur quand le courant s'interrompt plusieurs fois par jour ? Comment utiliser un modèle d'IA en ligne quand la connexion coûte plus d'un quart d'un salaire mensuel ?",
+     "l1": "인공지능을 둘러싼 세계적 경쟁 속에서 사하라 이남 아프리카의 많은 지역은 아주 현실적인 문제에 부딪힙니다. 하루에도 몇 번씩 전기가 끊길 때 컴퓨터를 어떻게 켤까요? 인터넷 요금이 월급의 4분의 1이 넘을 때 온라인 AI 모델을 어떻게 쓸까요?"
+    },
+    {
+     "s": 0,
+     "t": "Chaque jour, de grandes entreprises technologiques annoncent de nouveaux modèles, **alors que** l'Afrique peine à suivre le rythme. Le continent compte plus de 1,5 milliard d'habitants, dont la moitié vit dans des zones rurales souvent privées d'électricité, **en dépit des** efforts consentis.",
+     "l1": "매일 대형 기술 기업들이 새로운 모델을 발표하지만, 아프리카는 그 속도를 따라가기 어렵습니다. 대륙 인구는 15억 명이 넘고 그중 절반이 농촌에 사는데, 그동안의 노력에도 불구하고 전기가 없는 곳이 많습니다."
+    },
+    {
+     "s": 0,
+     "t": "Les écarts entre pays sont importants : **si** l'Afrique du Sud, le Ghana ou le Kenya affichent des taux d'électrification élevés, le Niger, le Tchad ou le Soudan du Sud restent très en retard. Les gouvernements annoncent **pourtant** des stratégies nationales d'IA et des partenariats avec Google ou Microsoft, **pendant qu'**une large partie de la population subit des coupures quotidiennes.",
+     "l1": "국가 간 격차도 큽니다. 남아프리카공화국, 가나, 케냐는 전기 보급률이 높은 반면 니제르, 차드, 남수단은 크게 뒤처져 있습니다. 그런데도 정부들은 국가 AI 전략과 구글·마이크로소프트와의 협력을 발표하고, 그사이 인구의 상당수는 매일 정전을 겪습니다."
+    },
+    {
+     "s": 0,
+     "t": "Internet coûte cher : 1 Go de données mobiles peut représenter entre 2 % et 10 % du revenu mensuel moyen. Selon l'UNESCO, la majorité des écoles d'Afrique subsaharienne ne sont pas connectées. Les élèves des grandes villes profiteront des outils d'IA, **tandis que** ceux des zones rurales en seront privés.",
+     "l1": "인터넷은 비쌉니다. 모바일 데이터 1GB가 평균 월소득의 2~10%에 이를 수 있습니다. 유네스코에 따르면 사하라 이남 아프리카 학교의 대다수는 인터넷에 연결되어 있지 않습니다. 대도시 학생들은 AI 도구의 혜택을 누리겠지만, 농촌 학생들은 그렇지 못할 것입니다."
+    },
+    {
+     "s": 0,
+     "t": "Face à ces difficultés, l'énergie solaire hors réseau s'est imposée dans de nombreuses communautés rurales. L'avenir de l'IA se jouera aussi dans les salles de classe sans électricité du Niger et dans les start-up de Nairobi qui innovent **malgré** les contraintes.",
+     "l1": "이런 어려움 속에서 전력망과 연결되지 않은 태양광 에너지가 많은 농촌 공동체에 자리 잡았습니다. AI의 미래는 전기가 없는 니제르의 교실과, 제약 속에서도 혁신하는 나이로비의 스타트업에서도 결정될 것입니다."
+    }
+   ],
+   "warmup": [
+    "Utilisez-vous des outils d'IA tous les jours ? Pour quoi faire ?",
+    "Selon vous, que faut-il au minimum pour pouvoir utiliser l'IA ?"
+   ],
+   "q1": [
+    {
+     "q": "Quel est le sujet principal de l'article ?",
+     "a": "Les obstacles (électricité, coût d'internet) qui freinent l'adoption de l'IA en Afrique subsaharienne."
+    },
+    {
+     "q": "Quel est le ton : enthousiaste, critique ou neutre ?",
+     "a": "Plutôt critique, mais l'article propose aussi des solutions."
+    },
+    {
+     "q": "Quelle solution est mentionnée à la fin ?",
+     "a": "L'énergie solaire hors réseau."
+    }
+   ],
+   "q2": [
+    {
+     "q": "Combien d'habitants compte le continent ? Où vit la moitié d'entre eux ?",
+     "a": "Plus de 1,5 milliard ; la moitié vit en zone rurale."
+    },
+    {
+     "q": "Citez deux pays bien électrifiés et deux pays en retard.",
+     "a": "Bien électrifiés : Afrique du Sud, Ghana, Kenya. En retard : Niger, Tchad, Soudan du Sud."
+    },
+    {
+     "q": "Que peut représenter 1 Go de données mobiles ?",
+     "a": "Entre 2 % et 10 % du revenu mensuel moyen."
+    },
+    {
+     "q": "Quelle conséquence pour les élèves ?",
+     "a": "Les inégalités augmentent : les élèves des villes profitent de l'IA, ceux des zones rurales non."
+    }
+   ],
+   "reading": [
+    {
+     "q": "Relevez toutes les expressions d'opposition et de concession.",
+     "a": "alors que, en dépit de, si…, pourtant, pendant que, tandis que, malgré"
+    },
+    {
+     "q": "Lesquelles sont suivies d'un nom ?",
+     "a": "en dépit de, malgré"
+    },
+    {
+     "q": "Dans le 3e paragraphe, « si » exprime-t-il une condition ?",
+     "a": "Non : il oppose deux faits (= alors que)."
+    }
+   ],
+   "notes": [
+    {
+     "t": "peiner à + infinitif",
+     "l1": "~하기 힘들다, 애쓰다",
+     "ex": "Il peine à suivre le cours."
+    },
+    {
+     "t": "une coupure (de courant)",
+     "l1": "정전",
+     "ex": "Il y a eu trois coupures aujourd'hui."
+    },
+    {
+     "t": "hors réseau",
+     "l1": "전력망에 연결되지 않은",
+     "ex": "une maison hors réseau"
+    },
+    {
+     "t": "être privé de",
+     "l1": "~을 누리지 못하다",
+     "ex": "Ils sont privés d'internet."
+    },
+    {
+     "t": "s'imposer",
+     "l1": "자리 잡다, 대세가 되다",
+     "ex": "Le télétravail s'est imposé."
+    },
+    {
+     "t": "consentir des efforts",
+     "l1": "노력을 기울이다",
+     "ex": "L'État a consenti de gros efforts."
+    }
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "family": "Opposition : comparer deux faits",
+   "note": "Les deux faits sont vrais en même temps ; on les **met en contraste**.",
+   "items": [
+    {
+     "form": "alors que / tandis que",
+     "mode": "+ indicatif",
+     "l1": "~인 반면",
+     "ex": "Les villes sont connectées, **tandis que** les villages ne le sont pas."
+    },
+    {
+     "form": "pendant que",
+     "mode": "+ indicatif",
+     "l1": "~하는 동안 (대조)",
+     "ex": "Ils parlent d'IA **pendant que** le courant est coupé."
+    },
+    {
+     "form": "si… (opposition)",
+     "mode": "+ indicatif",
+     "l1": "~이긴 하지만, ~인 반면",
+     "ex": "**Si** le Kenya est équipé, le Niger est en retard."
+    }
+   ]
+  },
+  {
+   "family": "Concession : un obstacle qui n'empêche pas",
+   "note": "On admet un fait, mais le résultat est **inattendu**.",
+   "items": [
+    {
+     "form": "pourtant / cependant",
+     "mode": "adverbe",
+     "l1": "그런데도, 하지만",
+     "ex": "Internet est cher ; **pourtant**, tout le monde l'utilise."
+    },
+    {
+     "form": "malgré / en dépit de",
+     "mode": "+ nom",
+     "l1": "~에도 불구하고",
+     "ex": "**Malgré** les coupures, elle étudie."
+    },
+    {
+     "form": "bien que",
+     "mode": "+ subjonctif",
+     "l1": "비록 ~이지만",
+     "ex": "**Bien qu'**il soit fatigué, il continue."
+    },
+    {
+     "form": "même si",
+     "mode": "+ indicatif",
+     "l1": "설령 ~일지라도",
+     "ex": "**Même si** c'est cher, ça vaut la peine."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "t": "l'électrification",
+   "l1": "전기 보급",
+   "ex": "Le taux d'électrification augmente."
+  },
+  {
+   "t": "le revenu mensuel",
+   "l1": "월소득",
+   "ex": "Le revenu mensuel moyen est bas."
+  },
+  {
+   "t": "une zone rurale",
+   "l1": "농촌 지역",
+   "ex": "Elle vit dans une zone rurale."
+  },
+  {
+   "t": "un écart",
+   "l1": "격차",
+   "ex": "L'écart entre les pays se creuse."
+  },
+  {
+   "t": "une start-up",
+   "l1": "스타트업",
+   "ex": "Cette start-up innove à Nairobi."
+  }
+ ],
+ "register": [
+  {
+   "formal": "alors que",
+   "casual": "mais"
+  },
+  {
+   "formal": "en dépit de",
+   "casual": "malgré"
+  },
+  {
+   "formal": "pourtant",
+   "casual": "quand même"
+  },
+  {
+   "formal": "le courant s'interrompt",
+   "casual": "ça coupe"
+  }
+ ],
+ "culture": {
+  "title": "Le français en Afrique",
+  "text": "Le français est langue officielle ou co-officielle dans de nombreux pays d'Afrique subsaharienne (Niger, Tchad, Sénégal, Côte d'Ivoire…). Aujourd'hui, la majorité des francophones vivent en Afrique : lire l'actualité africaine en français, c'est découvrir la francophonie de demain."
+ },
+ "pitfalls": [
+  {
+   "title": "*Bien que* + subjonctif, *même si* + indicatif",
+   "explain": "Les deux se traduisent souvent par « ~지만 », mais le mode change.",
+   "l1": "bien que 뒤에는 접속법, même si 뒤에는 직설법",
+   "wrong": "Bien qu'il est riche, il vit simplement.",
+   "right": "Bien qu'il **soit** riche, il vit simplement."
+  },
+  {
+   "title": "*Malgré* + nom seulement",
+   "explain": "Après *malgré* et *en dépit de*, on met un nom, pas une phrase.",
+   "l1": "malgré 뒤에 문장을 쓰려면 bien que를 사용",
+   "wrong": "Malgré il pleut, nous sortons.",
+   "right": "**Malgré la pluie** / **Bien qu'il pleuve**, nous sortons."
+  },
+  {
+   "title": "*Pourtant* n'est pas une conjonction",
+   "explain": "*Pourtant* est un adverbe : il ne prend pas *que* et se place souvent après un point-virgule.",
+   "l1": "pourtant que는 틀린 표현",
+   "wrong": "Pourtant que l'IA progresse, l'Afrique attend.",
+   "right": "L'IA progresse ; **pourtant**, l'Afrique attend."
+  },
+  {
+   "title": "*En dépit de* + les = *des*",
+   "explain": "*de* + *les* se contracte en *des*.",
+   "l1": "de + les → des",
+   "wrong": "en dépit de les efforts",
+   "right": "en dépit **des** efforts"
+  }
+ ],
+ "speaking": [
+  {
+   "q": "Comparez l'accès à internet dans votre pays et dans un autre pays (*alors que, tandis que*).",
+   "a": "En Corée, presque tout le monde a la fibre, **alors que** dans beaucoup de pays la connexion reste chère."
+  },
+  {
+   "q": "Parlez d'une difficulté que vous avez surmontée (*malgré, bien que*).",
+   "a": "**Bien que** le français soit difficile, je continue. **Malgré** le travail, j'étudie tous les soirs."
+  },
+  {
+   "q": "L'IA est-elle une chance ou un risque ? Donnez votre avis avec *pourtant* ou *même si*.",
+   "a": "L'IA est très utile ; **pourtant**, elle peut creuser les inégalités, **même si** elle ouvre de nouvelles possibilités."
+  }
+ ],
+ "exercises": [
+  {
+   "title": "Choisissez",
+   "instruction": "Choisissez le mot qui convient.",
+   "type": "choice",
+   "items": [
+    {
+     "q": "___ la pluie, nous sommes sortis.",
+     "options": [
+      "Malgré",
+      "Bien que",
+      "Alors que"
+     ],
+     "answers": [
+      "Malgré"
+     ],
+     "explain": "malgré + nom"
+    },
+    {
+     "q": "Il travaille beaucoup ; ___, il ne gagne pas assez.",
+     "options": [
+      "pourtant",
+      "malgré",
+      "tandis que"
+     ],
+     "answers": [
+      "pourtant"
+     ],
+     "explain": "adverbe de concession"
+    },
+    {
+     "q": "Bien qu'elle ___ fatiguée, elle continue.",
+     "options": [
+      "est",
+      "soit",
+      "sera"
+     ],
+     "answers": [
+      "soit"
+     ],
+     "explain": "bien que + subjonctif"
+    },
+    {
+     "q": "Les villes sont connectées, ___ les villages ne le sont pas.",
+     "options": [
+      "tandis que",
+      "malgré",
+      "en dépit de"
+     ],
+     "answers": [
+      "tandis que"
+     ],
+     "explain": "opposition de deux faits"
+    },
+    {
+     "q": "___ des efforts consentis, le réseau reste insuffisant.",
+     "options": [
+      "En dépit",
+      "Pourtant",
+      "Même si"
+     ],
+     "answers": [
+      "En dépit"
+     ],
+     "explain": "en dépit de + nom (des = de + les)"
+    }
+   ]
+  },
+  {
+   "title": "Subjonctif ou indicatif ?",
+   "instruction": "Conjuguez le verbe entre parenthèses.",
+   "type": "fill",
+   "items": [
+    {
+     "q": "Bien que l'électricité ___ (être) chère, tout le monde en a besoin.",
+     "answers": [
+      "soit"
+     ]
+    },
+    {
+     "q": "Même si internet ___ (coûter) cher, les jeunes l'utilisent.",
+     "answers": [
+      "coûte"
+     ]
+    },
+    {
+     "q": "Bien qu'ils ___ (avoir) peu de moyens, ils innovent.",
+     "answers": [
+      "aient"
+     ]
+    },
+    {
+     "q": "Même si nous ___ (faire) des efforts, cela ne suffit pas.",
+     "answers": [
+      "faisons"
+     ]
+    },
+    {
+     "q": "Bien que vous ___ (pouvoir) travailler hors ligne, la connexion reste utile.",
+     "answers": [
+      "puissiez"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dictée",
+   "instruction": "Écoutez la phrase et écrivez-la.",
+   "type": "dictation",
+   "items": [
+    {
+     "q": "Malgré les coupures, les élèves continuent à étudier."
+    },
+    {
+     "q": "Les villes sont connectées, tandis que les villages ne le sont pas."
+    },
+    {
+     "q": "Bien que l'énergie solaire soit utile, elle ne suffit pas."
+    },
+    {
+     "q": "Internet coûte cher ; pourtant, tout le monde en a besoin."
+    }
+   ]
+  },
+  {
+   "title": "Reliez les deux phrases",
+   "instruction": "Reliez avec le mot proposé, puis comparez avec la correction.",
+   "type": "free",
+   "items": [
+    {
+     "q": "Il fait froid. Nous sortons. (*bien que*)",
+     "answers": [
+      "Bien qu'il fasse froid, nous sortons."
+     ]
+    },
+    {
+     "q": "Il y a des difficultés. Les start-up innovent. (*malgré*)",
+     "answers": [
+      "Malgré les difficultés, les start-up innovent."
+     ]
+    },
+    {
+     "q": "Le Kenya est bien équipé. Le Niger est en retard. (*alors que*)",
+     "answers": [
+      "Le Kenya est bien équipé, alors que le Niger est en retard."
+     ]
+    },
+    {
+     "q": "Les gouvernements parlent d'IA. Les coupures continuent. (*pourtant*)",
+     "answers": [
+      "Les gouvernements parlent d'IA ; pourtant, les coupures continuent."
+     ]
+    }
+   ]
+  }
+ ],
+ "audio_note": "Audio : voix du navigateur."
+}

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # usage: python3 tts_edge.py lesson.json   → d1.mp3, d2.mp3 (or d1.mp3 for an article)
 import asyncio, json, re, subprocess, sys, edge_tts
 L = json.load(open(sys.argv[1], encoding="utf-8"))

@@ -1,6 +1,6 @@
 ---
 name: language-lesson-builder
-description: Builds an interactive foreign-language lesson page for any learner (French learners of Spanish, Korean learners of French, English learners of Japanese…) in any target language (French by default) and CEFR level A1–C2, with or without a topic (it suggests 3). Step-by-step page built on two voiced dialogs or one openly licensed news article: listening/reading questions, tap-to-translate lines in the learner's language, shadowing, grammar and vocabulary with pronunciation, cultural note, pitfalls for that language pair, speaking with model answers, auto-checked exercises with dictation, mistakes review, then adaptive practice inside the page. Builds on past lessons. Always use it when the user asks for a language lesson, "leçon de français", "cours de FLE", "Spanish lesson", "프랑스어/영어/스페인어/일본어 수업", "외국어 레슨", "clase de español", a lesson from a news article, or a grammar point at a level (e.g. "A2 French lesson on the passé composé").
+description: Builds an interactive language lesson (any language, any learner, A1–C2) from dialogs or a news article. Use for 'French lesson', 'leçon de FLE', '프랑스어 수업', 'clase de español'.
 ---
 
 # Language Lesson Builder
